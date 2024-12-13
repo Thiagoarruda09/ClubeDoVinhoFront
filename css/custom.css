@@ -9,3 +9,11 @@ body.login div {
     align-items: center
     
 }
+.btn-wine{
+    background-color: #722F37;
+    color: white;
+    border: 1px solid #722F37;
+}
+.btn-wine:hover{
+    background-color: #722f37c9;
+}
