@@ -16,4 +16,9 @@ body.login div {
 }
 .btn-wine:hover{
     background-color: #722f37c9;
+    transform: scale(1.1);
+    transition: 1s;
+}
+a{
+    text-decoration: none;
 }
