@@ -14,21 +14,35 @@ while (dia <= 31) {
 
 // --------------------MÊS----------------
 
-let mes = 1;
+let meses = [
+    'janeiro',
+    'fevereiro',
+    'março',
+    'abril',
+    'maio',
+    'junho',
+    'julho',
+    'agosto',
+    'setembro',
+    'outubro',
+    'novembro',
+    'dezembro']
 
+
+let i=0
 
 do {
-    SELECT_MES.innerHTML += `<option>${mes}</option>`
-    mes++
+    SELECT_MES.innerHTML += `<option>${meses[i]}</option>`
+    i++
 
-} while (mes <= 12);
+} while (i<meses.length);
 
 
 // ----------------ANO------------------
 
 for (let ano = 2025; ano >= 1950; ano--) {
-    if(ano % 2 !==0){
+    if (ano % 2 !== 0) {
         SELECT_ANO.innerHTML += `<option> ${ano} </option>`
     }
-    
+
 }
