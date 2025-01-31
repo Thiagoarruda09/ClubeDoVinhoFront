@@ -18,17 +18,17 @@ function addCategory(){
       <div class="container">
         <div class="row">
           <div class="col">
-            <select name="" id="select-dia" class="form-control">
+            <select name="" id="select-dia" class="form-select">
               <option value="">--dia--</option>
             </select>
           </div>
           <div class="col">
-            <select name="" id="select-mes" class="form-control">
+            <select name="" id="select-mes" class="form-select">
               <option value="">--mês--</option>
             </select>
           </div>
           <div class="col">
-            <select name="" id="select-ano" class="form-control">
+            <select name="" id="select-ano" class="form-select">
               <option value="">--ano--</option>
             </select>
           </div>

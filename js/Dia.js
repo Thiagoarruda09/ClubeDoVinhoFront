@@ -4,8 +4,14 @@ const SELECT_DIA = document.getElementById('select-dia')
 const SELECT_MES = document.getElementById('select-mes')
 const SELECT_ANO = document.getElementById('select-ano')
 
+event.preventDefault()
+
 // -----------------DIA---------------------
 let dia = 1;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 14d51be75239f9e19af66a8d5054e4e9d2f24d8e
 while (dia <= 31) {
 
     SELECT_DIA.innerHTML += `<option> ${dia} </option>`
