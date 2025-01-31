@@ -17,14 +17,14 @@
          <div class="card card-body">
             <form action="">
                 <label for="Num">Numero do cartão</label>
-                <input onkeyup= "preencherNumero()"id="card-numero" type="text" class="form-control form-control-lg" placeholder="0000 0000 0000 0000">
+                <input onkeyup= "preencherNumero()"id="card-numero" type="text" class="form-control form-control-lg" placeholder="0000 0000 0000 0000" pattern="[0-9]+" inputmode="numeric"  oninput="formatarNumeroDoCartao(this)" maxlength="19">
                 <label for="titular">Nome do titular</label>
                 <input onkeyup="preencherNome()" id="card-nome" type="text" class="form-control form-control-lg" placeholder="Francisco da silva sousa">
                 
                 <div class="row">
                     <div class="col">
                         <label for="cvv">CVV</label>
-                        <input id="card-cvv" type="text" class="form-control form-control-lg" placeholder="123">
+                        <input id="card-cvv" type="text" class="form-control form-control-lg" placeholder="123" maxlength="3" onfocus="virarCartao()" onkeyup="preencherCvv()">
                     </div>
                     <div class="col">
                         <label for="selectmes">Mês</label>
@@ -53,17 +53,28 @@
             
 
             <div class="card card-body bg-dark" style="height: 260px;">
-                <img width="50px" src="assets/icons8-mastercard-48.png" alt="">
-                <img width="50px" src="assets/download.png" alt="" style="display: none;">
-                <div class="text-end"><img src="assets/chip-1-logo-png-transparent.png" alt="" width="50px"></div>
-                <div class="text-light">
+                <img width="50px" style="display: none;" src="assets/icons8-mastercard-48.png" alt="" id="bandeira-master">
+                <img width="50px" id="bandeira-visa" src="assets/download.png" alt="" style="display: none;">
+                
+                <div class="text-end cartao"><img src="assets/chip-1-logo-png-transparent.png" alt="" width="50px" id="chip"></div>
+           
+                <div class="text-light mt-5 pt-3" id="cartao" >
+                    <div class="bg-warning " id="cartao-virado" style="display: none;">
+                        <br>
+                    </div>
+                
                     <span id="result-numero">0000 0000 0000 0000</span>
                     <br>
                     <span id="result-nome">fulano de tal</span>
                     <br>
-                    <span id="result-mes">MM</span>
-                    /
-                    <span id="result-ano">YYYY</span>
+                    <div style="display: none;" id="result-data">
+                        <span id="result-mes" >MM</span>
+                        /
+                        
+                        <span id="result-ano" >YYYY</span>
+                        <br>
+                        <span id="result-cvv" >CVV</span>
+                    </div>
                 </div>
 
             </div>
