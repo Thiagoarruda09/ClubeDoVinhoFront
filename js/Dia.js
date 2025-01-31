@@ -1,11 +1,11 @@
-let dia = 1;
+
 
 const SELECT_DIA = document.getElementById('select-dia')
 const SELECT_MES = document.getElementById('select-mes')
 const SELECT_ANO = document.getElementById('select-ano')
 
 // -----------------DIA---------------------
-
+let dia = 1;
 while (dia <= 31) {
 
     SELECT_DIA.innerHTML += `<option> ${dia} </option>`

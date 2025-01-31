@@ -7,6 +7,6 @@ function navbar(){
         <button onClick="alterarConteudo('paises')" class="btn btn-outline-dark">paises</button>
         <button onClick="alterarConteudo('produtos')" class="btn btn-outline-dark">produtos</button>
         <button onClick="alterarConteudo('pedidos')" class="btn btn-outline-dark">pedidos</button>
-        <button onClick="alterarConteudo('')" class="btn btn-danger">Sair</button>
+       <a href="index.html"><button  class="btn btn-danger">Sair</button></a>
     </nav>`
 }
