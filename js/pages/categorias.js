@@ -2,7 +2,7 @@ function categorias (){
   return `
   <h2>categorias</h2>
   <div class="text-end mb-2">
-    <a class="btn btn-dark" href="add-Category.html">Nova categoria</a>
+    <a class="btn btn-dark" onClick="alterarConteudo('addCategory')">Nova categoria</a>
   </div>
   <section class="card card-body bg-white">
     <table class="table table-hover table-striped">
