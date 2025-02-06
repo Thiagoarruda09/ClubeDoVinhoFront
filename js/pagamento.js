@@ -67,12 +67,19 @@ function formatarNumeroDoCartao() {
   let valor = INPUT_NUMERO.value.replace(/\D/g, "");
   let formatado = valor.match(/.{1,4}/g)?.join(" ") || "";
   let primeirosDigitos = parseInt(valor.slice(0, 4));
+  let CARTAO = document.getElementById('cartao')
+  let cartaoVirado = document.getElementById("cartao-virado");
+
   INPUT_NUMERO.value = formatado;
 
   if (INPUT_NUMERO.value.startsWith("4")) {
     BANDEIRA_VISA.style.display = "block";
+    CARTAO.style.backgroundColor= "#1632C7"
+    cartaoVirado.style.backgroundColor="white"
+   
   } else {
     BANDEIRA_VISA.style.display = "none";
+    CARTAO.style.backgroundColor="#121212"
   }
 
   if (
@@ -80,8 +87,10 @@ function formatarNumeroDoCartao() {
     (primeirosDigitos >= 2221 && primeirosDigitos <= 2720)
   ) {
     BANDEIRA_MASTER.style.display = "block";
+    CARTAO.style.backgroundColor="#F36000"
   } else {
     BANDEIRA_MASTER.style.display = "none";
+   
   }
 }
 
