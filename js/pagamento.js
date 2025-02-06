@@ -63,6 +63,11 @@ function preencherMes() {
   }
 }
 
+// function removerUltimoDigito(numero){
+//   return numero.substr(0,numero.lenght - 1)
+
+// } 
+
 function formatarNumeroDoCartao() {
   let valor = INPUT_NUMERO.value.replace(/\D/g, "");
   let formatado = valor.match(/.{1,4}/g)?.join(" ") || "";
@@ -83,8 +88,7 @@ function formatarNumeroDoCartao() {
   }
 
   if (
-    (primeirosDigitos >= 5099 && primeirosDigitos <= 5599) ||
-    (primeirosDigitos >= 2221 && primeirosDigitos <= 2720)
+    (primeirosDigitos >= 5099 && primeirosDigitos <= 5599)
   ) {
     BANDEIRA_MASTER.style.display = "block";
     CARTAO.style.backgroundColor="#F36000"
