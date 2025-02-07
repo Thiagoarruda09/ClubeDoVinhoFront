@@ -11,106 +11,95 @@ const BANDEIRA_VISA = document.getElementById("bandeira-visa");
 const BANDEIRA_MASTER = document.getElementById("bandeira-master");
 const RESULT_CVV = document.getElementById("result-cvv");
 const RESULT_DATA = document.getElementById("result-data");
-const CARTAO =document.getElementById("cartao");
+const CARTAO = document.getElementById("cartao");
+const CARTAO_VIRADO = document.getElementById("cartao-virado");
+const CARTAO_VERSO= document.getElementById('cartao-verso');
 
 let hoje = new Date();
-
 let anoFim = hoje.getFullYear() + 10;
 
 for (let ano = hoje.getFullYear(); ano <= anoFim; ano++) {
-  SELECT_ANO.innerHTML += `<option> ${ano} </option>`;
+    SELECT_ANO.innerHTML += `<option>${ano}</option>`;
 }
 
-let meses = [
-  "janeiro",
-  "fevereiro",
-  "março",
-  "abril",
-  "maio",
-  "junho",
-  "julho",
-  "agosto",
-  "setembro",
-  "outubro",
-  "novembro",
-  "dezembro",
+const meses = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
 ];
 
-let i = 0;
-
-do {
-  SELECT_MES.innerHTML += `<option>${meses[i]}</option>`;
-  i++;
-} while (i < meses.length);
+meses.forEach((mes) => {
+    SELECT_MES.innerHTML += `<option>${mes}</option>`;
+});
 
 function preencherNumero() {
-  RESULT_NUMERO.innerHTML = INPUT_NUMERO.value;
+    RESULT_NUMERO.innerHTML = INPUT_NUMERO.value;
 }
 
 function preencherNome() {
-  RESULT_NOME.innerHTML = INPUT_TITULAR.value;
+    RESULT_NOME.innerHTML = INPUT_TITULAR.value;
 }
+
 function preencherAno() {
-  RESULT_ANO.innerHTML = SELECT_ANO.value;
+    RESULT_ANO.innerHTML = SELECT_ANO.value;
 }
 
 function preencherMes() {
-  let m = SELECT_MES.selectedIndex;
-
-  if (m < 10) {
-    RESULT_MES.innerHTML = "0" + m;
-  } else {
-    RESULT_MES.innerHTML = m;
-  }
+    let m = SELECT_MES.selectedIndex;
+    RESULT_MES.innerHTML = m < 10 ? "0" + m : m;
 }
 
 function formatarNumeroDoCartao() {
-  let valor = INPUT_NUMERO.value.replace(/\D/g, "");
-  let formatado = valor.match(/.{1,4}/g)?.join(" ") || "";
-  let primeirosDigitos = parseInt(valor.slice(0, 4));
-  INPUT_NUMERO.value = formatado;
+    let valor = INPUT_NUMERO.value.replace(/\D/g, "");
+    let formatado = valor.match(/.{1,4}/g)?.join(" ") || "";
+   
+    INPUT_NUMERO.value = formatado;
 
+   mudarCorDoCartao()
+}
+
+function mudarCorDoCartao(){
+CartaoVisa()
+CartaoMaster()
+}
+function CartaoVisa(){
   if (INPUT_NUMERO.value.startsWith("4")) {
-    let cartaoVirado = document.getElementById("cartao-virado");
+        
     BANDEIRA_VISA.style.display = "block";
-    CARTAO.style.backgroundColor="#0288C4"
-    cartaoVirado.style.backgroundColor="#F7A023"
-
-
-
-  } else {
+    CARTAO.style.backgroundColor = "#0288C4";
+    CARTAO_VIRADO.style.backgroundColor = "#F7A023";
+    CARTAO_VERSO.style.backgroundColor = "#0288C4";
+} else {
     BANDEIRA_VISA.style.display = "none";
-  }
+    CARTAO.style.backgroundColor = "#121212";
+}
 
-  if (
-    (primeirosDigitos >= 5099 && primeirosDigitos <= 5599) ||
-    (primeirosDigitos >= 2221 && primeirosDigitos <= 2720)
-  ) {
-    let cartaoVirado = document.getElementById("cartao-virado");
-    cartaoVirado.style.backgroundColor="#3F51B5"
+}
+
+function CartaoMaster(){
+  let valor = INPUT_NUMERO.value.replace(/\D/g, "");
+  let primeirosDigitos = parseInt(valor.slice(0, 4));
+  if (primeirosDigitos >= 5099 && primeirosDigitos <= 5599) {
+   
+    CARTAO_VIRADO.style.backgroundColor = "#3F51B5";
     BANDEIRA_MASTER.style.display = "block";
-        CARTAO.style.backgroundColor="#E86418"
-  } else {
+    CARTAO.style.backgroundColor = "#E86418";
+    CARTAO_VERSO.style.backgroundColor = "#E86418";
+} else {
     BANDEIRA_MASTER.style.display = "none";
-  }
+}
 }
 
-function virarCartao() {
-  let cartaoVirado = document.getElementById("cartao-virado");
-  let chip = document.getElementById("chip");
-  chip.style.display = "none";
-  cartaoVirado.style.display = "block";
-  RESULT_NUMERO.style.display = "none";
-  RESULT_NOME.style.display = "none";
-  RESULT_DATA.style.display = "block";
-
-
-}
 
 function preencherCvv() {
-  RESULT_CVV.innerHTML = INPUT_CVV.value;
+    RESULT_CVV.innerHTML = INPUT_CVV.value;
 }
 
-function clonarCartao(){
-    alert("cartao clonado com sucesso!")
+function mostrarFrente() {
+    document.getElementById('cartao').style.display = 'block';
+    document.getElementById('cartao-verso').style.display = 'none';
+}
+
+function mostrarVerso() {
+    document.getElementById('cartao').style.display = 'none';
+    document.getElementById('cartao-verso').style.display = 'block';
 }
