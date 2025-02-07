@@ -11,6 +11,7 @@ const BANDEIRA_VISA = document.getElementById("bandeira-visa");
 const BANDEIRA_MASTER = document.getElementById("bandeira-master");
 const RESULT_CVV = document.getElementById("result-cvv");
 const RESULT_DATA = document.getElementById("result-data");
+const CARTAO =document.getElementById("cartao");
 
 let hoje = new Date();
 
@@ -70,7 +71,13 @@ function formatarNumeroDoCartao() {
   INPUT_NUMERO.value = formatado;
 
   if (INPUT_NUMERO.value.startsWith("4")) {
+    let cartaoVirado = document.getElementById("cartao-virado");
     BANDEIRA_VISA.style.display = "block";
+    CARTAO.style.backgroundColor="#0288C4"
+    cartaoVirado.style.backgroundColor="#F7A023"
+
+
+
   } else {
     BANDEIRA_VISA.style.display = "none";
   }
@@ -79,7 +86,10 @@ function formatarNumeroDoCartao() {
     (primeirosDigitos >= 5099 && primeirosDigitos <= 5599) ||
     (primeirosDigitos >= 2221 && primeirosDigitos <= 2720)
   ) {
+    let cartaoVirado = document.getElementById("cartao-virado");
+    cartaoVirado.style.backgroundColor="#3F51B5"
     BANDEIRA_MASTER.style.display = "block";
+        CARTAO.style.backgroundColor="#E86418"
   } else {
     BANDEIRA_MASTER.style.display = "none";
   }
@@ -99,4 +109,8 @@ function virarCartao() {
 
 function preencherCvv() {
   RESULT_CVV.innerHTML = INPUT_CVV.value;
+}
+
+function clonarCartao(){
+    alert("cartao clonado com sucesso!")
 }
