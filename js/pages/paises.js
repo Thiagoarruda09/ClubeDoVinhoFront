@@ -9,87 +9,9 @@ function paises(){
           <th>ações</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Brasil</td>
-          <td>
-            <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-            <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-          </td>
-        </tr>
+      <tbody id="table-paises">
+        
+        
 
       </tbody>
     </table>
