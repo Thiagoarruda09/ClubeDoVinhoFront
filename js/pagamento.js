@@ -15,6 +15,8 @@ const CARTAO = document.getElementById("cartao");
 const CARTAO_VIRADO = document.getElementById("cartao-virado");
 const CARTAO_VERSO= document.getElementById('cartao-verso');
 
+// pega o ano atual e adiciona 10 anos no select
+
 let hoje = new Date();
 let anoFim = hoje.getFullYear() + 10;
 
@@ -22,6 +24,7 @@ for (let ano = hoje.getFullYear(); ano <= anoFim; ano++) {
     SELECT_ANO.innerHTML += `<option>${ano}</option>`;
 }
 
+// adiciona os meses no select
 const meses = [
     "janeiro", "fevereiro", "março", "abril", "maio", "junho",
     "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
