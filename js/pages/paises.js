@@ -2,7 +2,7 @@ function paises(){
   return `    <h2>paises</h2>
       <hr>
   <section class="card card-body bg-white border border-2 border-gray">
-    <table class="table table-dark table-striped shadow table-hover">
+    <table class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
       <thead class="table-dark">
         <tr>
           <th>#ID</th>
@@ -14,7 +14,7 @@ function paises(){
 </svg> ações</th>
         </tr>
       </thead>
-      <tbody id="table-paises">
+      <tbody id="table-paises" >
         
         
 

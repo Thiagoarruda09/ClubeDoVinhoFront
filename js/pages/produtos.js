@@ -3,7 +3,7 @@ function produtos() {
     <h2>Produtos</h2>
     <hr>
     <section class="card card-body bg-white border border-2 border-gray">
-      <table class="table table-dark table-striped shadow table-hover">
+      <table class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
         <thead class="table-dark">
           <tr>
             <th>#ID</th>
@@ -22,7 +22,7 @@ function produtos() {
 </svg> Ações</th>
           </tr>
         </thead>
-        <tbody id="table-produtos">
+        <tbody id="table-produtos" >
           <!-- Os produtos serão inseridos aqui -->
         </tbody>
       </table>

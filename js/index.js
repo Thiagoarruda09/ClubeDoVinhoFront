@@ -311,7 +311,7 @@ function Produtos() {
                 <td>${produtos.id}</td>
                 <td>${produtos.nome}</td>
               <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
-                <td>${produtos.descricao}</td>
+                <td style="font-size: 14px;">${produtos.descricao}</td>
                 <td>${produtos.valor}</td>
                 <td>${produtos.estoque}</td>
                 <td>
