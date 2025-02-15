@@ -13,7 +13,7 @@ function alterarConteudo(pagina) {
         ${window[pagina]()}
     `;
     
-    if (pagina === "addCategory") {
+    if (pagina === "adicionarCategoria") {
         createData();
     }
     
@@ -62,13 +62,20 @@ function addAnos() {
 
 function addCategory() {
     const table = document.getElementById("table-category");
-    const dados = [
+    const categorias = [
         { id: 1, nome: "espumante", descricao: "desc do espumante" },
         { id: 2, nome: "branco", descricao: "vinho de uvas brancas" },
-        { id: 3, nome: "verde", descricao: "vinho de uvas verdes" }
+        { id: 3, nome: "verde", descricao: "vinho de uvas verdes" },
+        { id: 4, nome: "tinto", descricao: "vinho de uvas tintas" },
+        { id: 5, nome: "rosé", descricao: "vinho rosado" },
+        { id: 6, nome: "suave", descricao: "vinho de sabor adocicado" },
+        { id: 7, nome: "seco", descricao: "vinho com menos açúcar residual" },
+        { id: 8, nome: "fortificado", descricao: "vinho com adição de aguardente vínica" },
+        { id: 9, nome: "orgânico", descricao: "vinho produzido sem pesticidas sintéticos" },
+        { id: 10, nome: "biodinâmico", descricao: "vinho feito seguindo práticas biodinâmicas" }
     ];
     
-    dados.forEach(categoria => {
+    categorias.forEach(categoria => {
         table.innerHTML += `
             <tr>
                 <td>${categoria.id}</td>
@@ -87,25 +94,23 @@ function addPaises(){
     const TABLE2 = document.getElementById('table-paises')
 
 
-let paises = [
-    {
-        id:1,
-        nome:"brasil",
-       
-    },
-    {
-        id:2,
-        nome:"espanha",
-        
-    },
-    {
-        id:3,
-        nome:"china",
-        
-    }
-]
+    const paises = [
+        { id: 1, nome: "Brasil" },
+        { id: 2, nome: "Espanha" },
+        { id: 3, nome: "China" },
+        { id: 4, nome: "Estados Unidos" },
+        { id: 5, nome: "França" },
+        { id: 6, nome: "Itália" },
+        { id: 7, nome: "Alemanha" },
+        { id: 8, nome: "Japão" },
+        { id: 9, nome: "Austrália" },
+        { id: 10, nome: "Canadá" },
+        { id: 11, nome: "México" },
+        { id: 12, nome: "Argentina" },
+        { id: 13, nome: "Portugal" }
+    ];
 
-paises.forEach((paises)=>{
+    paises.forEach((paises)=>{
     TABLE2.innerHTML+=`
      <tr>
                 <td>${paises.id}</td>
