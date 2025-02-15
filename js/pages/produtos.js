@@ -1,131 +1,41 @@
-function produtos (){
-    return `<h2>produtos</h2>
+function produtos() {
+  return `
+    <h2>Produtos</h2>
     <section class="card card-body bg-white">
       <table class="table table-hover table-striped">
         <thead class="table-dark">
           <tr>
             <th>#ID</th>
-            <th>nome</th>
-            <th>descrição</th>
-            <th>valor</th>
-            <th>estoque</th>
-            <th>ações</th>
+            <th>Nome</th>
+            <th>Imagem</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Estoque</th>
+            <th>Ações</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>ypioca</td>
-            <td>agua ardente diretamente da cana</td>
-            <td>14,99</td>
-            <td>10</td>
-            <td>
-              <a href="" class="btn btn-outline-warning btn-sm">Editar</a>
-              <a href="" class="btn btn-outline-danger btn-sm">Excluir</a>
-            </td>
-          </tr>
-
+        <tbody id="table-produtos">
+          <!-- Os produtos serão inseridos aqui -->
         </tbody>
       </table>
 
-    </section>`
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-dark">
+              <h5 class="modal-title text-light" id="modal-product-name">Detalhes do Produto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="" class="img-fluid rounded" id="modal-imagem" alt="Imagem do produto">
+            </div>
+            <div class="modal-footer bg-dark ">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
 }
+

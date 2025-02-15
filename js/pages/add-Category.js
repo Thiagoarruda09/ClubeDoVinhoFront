@@ -1,4 +1,4 @@
-function adicionarCategoria(){
+function addCategory(){
   return `  <h2>Nova categoria</h2>
   <div class="text-end mb-2">
     <a class="btn btn-dark" onClick="alterarConteudo('categorias')">Voltar</a>

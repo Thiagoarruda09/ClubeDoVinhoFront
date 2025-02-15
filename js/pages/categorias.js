@@ -3,7 +3,7 @@ function categorias (){
   <h2>categorias</h2>
   <div class="text-end mb-2">
 
-    <a class="btn btn-dark" onclick="alterarConteudo('adicionarCategoria')">Nova categoria</a>
+    <a class="btn btn-dark" onclick="alterarConteudo('addCategory')">Nova categoria</a>
 
  
 
