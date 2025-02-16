@@ -1,2 +1,2 @@
 # ClubeDoVinhoFront
-aplicação feita em html e css para um clube de vinho (atividade curso FS)
+aplicação feita em html, css e javascript para um clube do vinho (atividade curso FS)
