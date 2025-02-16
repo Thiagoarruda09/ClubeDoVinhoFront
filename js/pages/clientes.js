@@ -1,7 +1,7 @@
 function clientes(){
   return ` 
       <hr>
-  <section class="card card-body bg-white border border-2 border-gray">
+  <section class="card card-body bg-white border border-2 border-gray col-10 offset-1">
     <table id="tabela2" class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
       <thead class="table-dark">
         <tr>
