@@ -1,17 +1,11 @@
-function categorias (){
+function categorias() {
   return `
      <div class="d-flex justify-content-between">
-      <h2>categorias</h2>
+      <h1>Categorias</h1>
       <a class="btn btn-dark" onclick="alterarConteudo('addCategory')">Nova categoria</a>
     </div>
       <hr>
-  <div class="text-end mb-2">
 
-   
-
- 
-
-  </div>
   <section class="card card-body bg-white border border-2 border-gray">
     <table class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
       <thead class="table-dark">
@@ -34,5 +28,5 @@ function categorias (){
       </tbody>
     </table>
 
-  </section>`
+  </section>`;
 }

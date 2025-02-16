@@ -1,17 +1,19 @@
 function addCategory(){
-  return `<div class="animate__animated animate__fadeInLeft">
-      <h2>Nova categoria</h2>
-    <div class="text-end mb-2">
-      <a class="btn btn-dark" onClick="alterarConteudo('categorias')">Voltar</a>
-    </div>
-    <section class="card card-body bg-white ">
+  return `
+  <div class="">
+      <div class="d-flex justify-content-between">
+        <h1>Nova categoria</h1>
+        <a class="btn btn-dark" onClick="alterarConteudo('categorias')">Voltar</a>
+      </div>
+<hr>
+    <section class="card card-body bg-white animate__animated animate__fadeInLeft">
       <div id="erro_nome" style="display: none;" class="alert alert-danger ">
         Nome invalido
       </div>
       <div id="erro_descricao" style="display: none;" class="alert alert-danger">
         Descrição invalida
       </div>
-      <form onsubmit="enviar()" action="">
+      <form onsubmit="enviarCategory()" action="">
         <label for="nome">Nome:</label>
         <input id="nome" type="text" class="form-control mb-3">
         <label for="descrição">Descrição:</label>

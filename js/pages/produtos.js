@@ -1,6 +1,9 @@
 function produtos() {
   return `
-    <h2>Produtos</h2>
+    <div class="d-flex justify-content-between">
+      <h1>Produtos</h1>
+      <a class="btn btn-dark" onclick="alterarConteudo('cadastrarProduto')">Novo produto</a>
+    </div>
     <hr>
     <section class="card card-body bg-white border border-2 border-gray">
       <table class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
