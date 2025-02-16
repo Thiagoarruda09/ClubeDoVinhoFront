@@ -21,12 +21,27 @@ function alterarConteudo(pagina) {
     `;
 
   // Funções específicas chamadas conforme a página
-  if (pagina === "addCategory") createData();
-  if (pagina === "categorias") Category();
-  if (pagina === "paises") Paises();
-  if (pagina === "produtos") Produtos();
-  if (pagina === "clientes") Clientes();
-  if (pagina === "pedidos") Pedidos();
+  if (pagina === "dashboard") {menuAtivo1()}
+  if (pagina === "addCategory") {createData();
+    menuAtivo2()
+  
+  }
+  if (pagina === "categorias") {Category();
+    menuAtivo2()
+    
+  }
+  if (pagina === "paises") {Paises();
+    menuAtivo4()
+  }
+  if (pagina === "produtos") {Produtos();
+    menuAtivo5()
+  }
+  if (pagina === "clientes") {Clientes();
+    menuAtivo3()
+  }
+  if (pagina === "pedidos") {Pedidos();
+    menuAtivo6()
+  }
 }
 
 // Função para gerar os dados de seleção de data
@@ -203,9 +218,10 @@ function Paises() {
 }
 
 // Função que exibe a imagem do produto no modal
-function modalImg(nome, imagem) {
+function modalImg(nome, imagem, descricao) {
   document.getElementById("modal-product-name").innerHTML = nome;
   document.getElementById("modal-imagem").src = imagem;
+  document.getElementById("modal-product-desc").innerHTML = descricao;
 }
 // Função para renderizar os produtos na tabela
 function Produtos() {
@@ -310,7 +326,7 @@ function Produtos() {
         <tr>
                 <td>${produtos.id}</td>
                 <td>${produtos.nome}</td>
-              <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
+              <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.descricao}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
                 <td style="font-size: 14px;">${produtos.descricao}</td>
                 <td>${produtos.valor}</td>
                 <td>${produtos.estoque}</td>
@@ -385,4 +401,31 @@ function Pedidos() {
               </tr>
         `;
   });
+}
+
+function menuAtivo(){
+  menuAtivo1();
+  menuAtivo2(); 
+  menuAtivo3();
+  menuAtivo4();
+  menuAtivo5(); 
+  menuAtivo6();
+}
+function menuAtivo1(){
+  const nav_link_1 = document.getElementById("nav_link_1").classList.add("active");
+}
+function menuAtivo2(){
+  const nav_link_2 = document.getElementById("nav_link_2").classList.add("active");
+}
+function menuAtivo3(){
+  const nav_link_3 = document.getElementById("nav_link_3").classList.add("active");
+}
+function menuAtivo4(){
+  const nav_link_4 = document.getElementById("nav_link_4").classList.add("active");
+}
+function menuAtivo5(){
+  const nav_link_5 = document.getElementById("nav_link_5").classList.add("active");
+}
+function menuAtivo6(){
+  const nav_link_6 = document.getElementById("nav_link_6").classList.add("active");
 }

@@ -86,6 +86,11 @@ if (product_stock.value == '') {
 }
 
 } 
+function formatarValor(){
+    const product_price = document.getElementById('product_price')
+    let valor = product_price.value.replace(/\D/g, "");
+    product_price.value=valor
+}
 
 
 
