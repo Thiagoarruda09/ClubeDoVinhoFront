@@ -1,5 +1,5 @@
 function clientes(){
-  return `    <h1>Clientes</h1>
+  return ` 
       <hr>
   <section class="card card-body bg-white border border-2 border-gray">
     <table id="tabela2" class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
