@@ -21,27 +21,64 @@ function alterarConteudo(pagina) {
     `;
 
   // Funções específicas chamadas conforme a página
-  if (pagina === "dashboard") {menuAtivo1()}
+  if (pagina === "dashboard") {menuAtivo1()
+    
+  }
   if (pagina === "addCategory") {createData();
     menuAtivo2()
+   
   
+  }
+  if(pagina=== 'cadastrarProduto'){
+    menuAtivo5()
+    
   }
   if (pagina === "categorias") {Category();
     menuAtivo2()
+ 
     
   }
   if (pagina === "paises") {Paises();
     menuAtivo4()
+  
   }
   if (pagina === "produtos") {Produtos();
     menuAtivo5()
+  
   }
   if (pagina === "clientes") {Clientes();
     menuAtivo3()
+   
   }
   if (pagina === "pedidos") {Pedidos();
     menuAtivo6()
+ 
   }
+}
+
+function mudarTema(){
+
+   const svg_moon = document.getElementById('svg_moon')
+   const svg_sun = document.getElementById('svg_sun')
+  
+
+    
+  if(paginaPrincipal.style.backgroundColor === 'gray' ){
+ 
+   
+    paginaPrincipal.style.backgroundColor = 'white'
+    
+  }else{
+    paginaPrincipal.style.backgroundColor = 'gray'}
+  
+    if (svg_sun.style.display === 'block' || svg_sun.style.display === '') {
+      svg_sun.style.display = 'none';
+      svg_moon.style.display = 'block';
+    } else {
+      svg_sun.style.display = 'block';
+      svg_moon.style.display = 'none';
+    }
+  
 }
 
 // Função para gerar os dados de seleção de data
@@ -403,14 +440,7 @@ function Pedidos() {
   });
 }
 
-function menuAtivo(){
-  menuAtivo1();
-  menuAtivo2(); 
-  menuAtivo3();
-  menuAtivo4();
-  menuAtivo5(); 
-  menuAtivo6();
-}
+
 function menuAtivo1(){
   const nav_link_1 = document.getElementById("nav_link_1").classList.add("active");
 }

@@ -1,15 +1,13 @@
 function cadastrarProduto() {
   return `
       <div class="">
-        <div class="d-flex justify-content-between mb-2">
-            <h1>Cadastrar Produto</h1>
-              <a class="btn btn-dark " onClick="alterarConteudo('produtos')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
-</svg> Voltar</a>
-        </div>
+       
+            <h1 class="text-center">Cadastrar Produto</h1>
+
+       
         <hr>
 
-        <section class="card card-body bg-white animate__animated animate__fadeInLeft">
+        <section id="formulario2" class="card card-body col-10 offset-1 bg-dark text-white animate__animated animate__fadeInLeft">
               <div id="erro_product_name" style="display: none;" class="alert alert-danger ">
         O nome do produto precisa ser preenchido
       </div>
@@ -59,11 +57,15 @@ function cadastrarProduto() {
 </svg> Estoque</strong></label>
                         <input class="form-control " type="number" id="product_stock">
                     </div>
-                    <button class="btn btn-primary mt-2" type="submit">Cadastrar</button>
+                    <button class="btn btn-primary mt-2 col-6" type="submit">Cadastrar</button>
                 </div>
             
             </form>
+            
         </section>
+                      <a class="btn btn-dark col-4 offset-4 mt-2 " onClick="alterarConteudo('produtos')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+</svg> Voltar</a>
         
 
 
