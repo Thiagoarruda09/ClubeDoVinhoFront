@@ -22,3 +22,13 @@ body.login div {
 a{
     text-decoration: none;
 }
+
+.nav-item:hover{
+ 
+    text-decoration: underline #efefef;
+    transform: scale(1.1);
+    transition: 1s;
+   
+
+
+}
