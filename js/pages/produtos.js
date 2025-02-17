@@ -1,5 +1,21 @@
 function produtos() {
-  return `
+  return `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-dark">
+              <h5 class="modal-title text-light" id="modal-product-name">Detalhes do Produto</h5>
+              <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img src="" class="img-fluid rounded" id="modal-imagem" alt="Imagem do produto">
+            </div>
+            <div class="modal-footer bg-dark d-flex">
+            <p id="modal-product-desc" class="text-light w-100 text-center"></p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="d-flex justify-content-between">
     
              <a class="btn btn-dark col-2 offset-5" onclick="alterarConteudo('cadastrarProduto')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -45,23 +61,7 @@ function produtos() {
 </div>
 
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header bg-dark">
-              <h5 class="modal-title text-light" id="modal-product-name">Detalhes do Produto</h5>
-              <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-              <img src="" class="img-fluid rounded" id="modal-imagem" alt="Imagem do produto">
-            </div>
-            <div class="modal-footer bg-dark d-flex">
-            <p id="modal-product-desc" class="text-light w-100 text-center"></p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </section>
   `;
 }
