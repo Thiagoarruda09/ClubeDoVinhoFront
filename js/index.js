@@ -63,13 +63,13 @@ function mudarTema(){
   
 
     
-  if(paginaPrincipal.style.backgroundColor === 'transparent' ){
+  if(paginaPrincipal.style.backgroundColor === 'gray' ){
  
    
     paginaPrincipal.style.backgroundColor = 'white'
     
   }else{
-    paginaPrincipal.style.backgroundColor = 'transparent'}
+    paginaPrincipal.style.backgroundColor = 'gray'}
   
     if (svg_sun.style.display === 'block' || svg_sun.style.display === '') {
       svg_sun.style.display = 'none';
