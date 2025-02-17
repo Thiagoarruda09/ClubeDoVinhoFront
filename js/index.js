@@ -54,23 +54,52 @@ function alterarConteudo(pagina) {
   }
 }
 
-function addCategoria(){
-  
-const formulario_categorias = document.getElementById('formulario_categoria')
-if(formulario_categorias.style.display === 'none' || formulario_categorias.style.display === '') {
-  formulario_categorias.style.display = 'block'
-}
+function addCategoria() {
+  const formulario_categorias = document.getElementById('formulario_categoria');
+  const categoria = document.getElementById('categoria');
+
+  if (!formulario_categorias || !categoria) {
+    console.warn("Elementos não encontrados.");
+    return;
+  }
+
+  if (formulario_categorias.style.display === 'none' || formulario_categorias.style.display === '') {
+    formulario_categorias.style.display = 'block';
+    formulario_categorias.classList.remove('animate__fadeOutRight');
+    formulario_categorias.classList.add('animate__fadeInRight');
+
+    categoria.classList.remove('col-10');
+    categoria.classList.add('col-7');
+  }
 }
 
 function voltarParaCategorias(){
-  let categoria = document.getElementById('categoria')
+  let categoria = document.getElementById('categoria');  
+  const formulario_categorias = document.getElementById('formulario_categoria');
 
-  
-  const formulario_categorias = document.getElementById('formulario_categoria')
-  if(formulario_categorias.style.display==="block"){
-    formulario_categorias.style.display = 'none'
+  if (!categoria || !formulario_categorias) {
+    console.warn("Elementos não encontrados.");
+    return;
+  }
+
+  if (categoria.classList.contains('col-7')) {
+    formulario_categorias.classList.remove('animate__fadeInRight');
+    formulario_categorias.classList.add('animate__fadeOutRight')
+    ;
+
+    // Aguarda o tempo da animação antes de alterar as classes
+    setTimeout(() => {
+      formulario_categorias.style.display = "none"; // Opcional: Esconder o formulário
+      categoria.classList.remove('col-7');
+      categoria.classList.add('col-10');
+    }, 500); // Ajuste conforme a duração da animação
   }
 }
+
+
+
+
+
 
 
 
