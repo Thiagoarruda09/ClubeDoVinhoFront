@@ -14,21 +14,25 @@ function enviarCategory() {
 
 
     if (input_nome.value == '') {
-        input_nome.style.border = '1px solid red'
-        erro_nome.style.display = 'block'
+        input_nome.classList.remove('is-valid')
+        input_nome.classList.add('is-invalid')
+        erro_nome.classList.remove('d-none')
     } else {
-        input_nome.style.border = '1px solid green'
-        erro_nome.style.display = 'none'
+        input_nome.classList.remove('is-invalid');
+        input_nome.classList.add('is-valid')
+        erro_nome.classList.add('d-none')
 
     }
 
 
     if (input_descricao.value == '') {
-        input_descricao.style.border = '1px solid red'
-        document.getElementById('erro_descricao').style.display = 'block'
+        input_descricao.classList.remove('is-valid')
+        input_descricao.classList.add('is-invalid')
+       erro_descricao.classList.remove('d-none')
     } else {
-        input_descricao.style.border = '1px solid green'
-        erro_descricao.style.display = 'none'
+        input_descricao.classList.remove('is-invalid')
+        input_descricao.classList.add('is-valid')
+        erro_descricao.classList.add('d-none')
     }
 
 
