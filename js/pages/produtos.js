@@ -11,8 +11,8 @@ function produtos() {
     </div>
    
     <hr>
-    <section class="card card-body  bg-white border border-2 border-gray">
-      <table id="tabela6" class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight ">
+    <section class="card card-body animate__animated animate__fadeInRight  bg-white border border-2 border-gray">
+      <table id="tabela6" class="table table-dark table-striped shadow table-hover ">
         <thead class="table-dark">
           <tr>
             <th>#ID</th>

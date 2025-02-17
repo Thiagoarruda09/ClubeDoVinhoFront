@@ -2,8 +2,8 @@ function pedidos (){
   return `  
       <hr>
   
-  <section class="card card-body bg-white border border-2 border-gray col-8 offset-2">
-    <table id="tabela5" class="table table-dark table-striped shadow table-hover animate__animated animate__fadeInRight">
+  <section class="card  card-body animate__animated animate__fadeInRight bg-white border border-2 border-gray col-8 offset-2">
+    <table id="tabela5" class="table table-dark table-striped shadow table-hover ">
       <thead class="table-dark">
         <tr>
           <th>#ID</th>

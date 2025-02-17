@@ -24,17 +24,15 @@ function alterarConteudo(pagina) {
   if (pagina === "dashboard") {menuAtivo1()
     
   }
-  if (pagina === "addCategory") {createData();
-    menuAtivo2()
-   
-  
-  }
+ 
   if(pagina=== 'cadastrarProduto'){
     menuAtivo5()
     
   }
-  if (pagina === "categorias") {Category();
-    menuAtivo2()
+  if (pagina === "categorias") {Category()
+   ;
+    createData();
+    menuAtivo2();
  
     
   }
@@ -55,6 +53,26 @@ function alterarConteudo(pagina) {
  
   }
 }
+
+function addCategoria(){
+  
+const formulario_categorias = document.getElementById('formulario_categoria')
+if(formulario_categorias.style.display === 'none' || formulario_categorias.style.display === '') {
+  formulario_categorias.style.display = 'block'
+}
+}
+
+function voltarParaCategorias(){
+  let categoria = document.getElementById('categoria')
+
+  
+  const formulario_categorias = document.getElementById('formulario_categoria')
+  if(formulario_categorias.style.display==="block"){
+    formulario_categorias.style.display = 'none'
+  }
+}
+
+
 
 function mudarTema(){
 
