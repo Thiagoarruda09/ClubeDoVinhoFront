@@ -43,8 +43,8 @@ a{
 
 
 .nav-link:hover{
-    color: #efefef;
-    text-decoration: underline #efefef;
+   color: #121212;
+    background-color: #CCCCCC;
     transform: scale(1.1);
     transition: 1s;
    
