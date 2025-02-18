@@ -5,7 +5,7 @@
 
 html, body {
     height: 100%;
-    background-color: #efefef;
+  
 }
 h5{
     font-family: 'GROSTICK';
@@ -58,4 +58,8 @@ a{
 .gradient_button{
     background-color: #CCCCCC;
     color: #121212;
+}
+.teste{
+    position: relative;
+    left: 1000px
 }

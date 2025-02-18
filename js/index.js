@@ -101,7 +101,28 @@ function voltarParaCategorias(){
 
 
 
+function mudarTemaDeLogin(){
 
+ 
+  const paginaDeLogin = document.getElementById('paginaDeLogin')
+
+  const svg_sun = document.getElementById('svg_sun')
+  const svg_moon = document.getElementById('svg_moon')
+  if(paginaDeLogin.style.backgroundColor === '' ){
+    paginaDeLogin.style.backgroundColor = '#323539'
+    
+  }else{
+    paginaDeLogin.style.backgroundColor = ''
+  }
+  
+  if (svg_sun.style.display === 'block' || svg_sun.style.display === '') {
+    svg_sun.style.display = 'none';
+    svg_moon.style.display = 'block';
+  } else {
+    svg_sun.style.display = 'block';
+    svg_moon.style.display = 'none';
+  }
+}
 
 function mudarTema(){
 
@@ -125,6 +146,7 @@ function mudarTema(){
       svg_sun.style.display = 'block';
       svg_moon.style.display = 'none';
     }
+   
   
 }
 
