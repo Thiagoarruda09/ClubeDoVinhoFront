@@ -14,7 +14,7 @@ function categorias() {
     <section id="categoria" class="card card-body  animate__animated animate__fadeInRight border border-2 border-gray col-7 ">
       <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
         <table id="tabela1" class="table table-dark table-striped shadow table-hover ">
-          <thead class="table-dark">
+          <thead class="">
             <tr>
               <th>#ID</th>
               <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -111,6 +111,7 @@ function categorias() {
             </svg> PRONTO</button>
           </form>
         </section>
+        
                 
       </div>
   </div>

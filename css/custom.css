@@ -1,7 +1,27 @@
+@font-face {
+    font-family: 'GROSTICK';
+    src: url(../fontes/GROSTICK.otf);
+}
+
 html, body {
     height: 100%;
     background-color: #efefef;
 }
+h5{
+    font-family: 'GROSTICK';
+    font-size: 50px;
+    color: #77060F;
+
+
+}
+h5:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    background-color: #CCCCCC;
+
+    border-radius: 1000px 10px 1000px 100px;}
+
+
 
 body.login div {
     height: 100vh;
@@ -10,14 +30,15 @@ body.login div {
     
 }
 .btn-wine{
-    background-color: #722F37;
+    background-image: linear-gradient(to right, #76060F, #A50B18, #CC1935);
     color: white;
     border: 1px solid #722F37;
 }
 .btn-wine:hover{
-    background-color: #722f37c9;
+    background-image: linear-gradient(to left, #76060F, #A50B18, #CC1935);
     transform: scale(1.1);
     transition: 1s;
+    color: white;
 }
 a{
     text-decoration: none;
@@ -31,4 +52,13 @@ a{
    
 
 
+}
+
+.gradient{
+    background-image: linear-gradient(to right, #76060F, #A50B18, #CC1935);
+}
+
+.gradient_button{
+    background-color: #CCCCCC;
+    color: #121212;
 }

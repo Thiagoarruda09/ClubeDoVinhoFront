@@ -110,13 +110,13 @@ function mudarTema(){
   
 
     
-  if(paginaPrincipal.style.backgroundColor === 'gray' ){
+  if(paginaPrincipal.style.backgroundColor === '' ){
  
    
-    paginaPrincipal.style.backgroundColor = 'white'
+    paginaPrincipal.style.backgroundColor = '#323539'
     
   }else{
-    paginaPrincipal.style.backgroundColor = 'gray'}
+    paginaPrincipal.style.backgroundColor = ''}
   
     if (svg_sun.style.display === 'block' || svg_sun.style.display === '') {
       svg_sun.style.display = 'none';
@@ -489,20 +489,20 @@ function Pedidos() {
 
 
 function menuAtivo1(){
-  const nav_link_1 = document.getElementById("nav_link_1").classList.add("active");
+  const nav_link_1 = document.getElementById("nav_link_1").classList.add("gradient_button");
 }
 function menuAtivo2(){
-  const nav_link_2 = document.getElementById("nav_link_2").classList.add("active");
+  const nav_link_2 = document.getElementById("nav_link_2").classList.add("gradient_button");
 }
 function menuAtivo3(){
-  const nav_link_3 = document.getElementById("nav_link_3").classList.add("active");
+  const nav_link_3 = document.getElementById("nav_link_3").classList.add("gradient_button");
 }
 function menuAtivo4(){
-  const nav_link_4 = document.getElementById("nav_link_4").classList.add("active");
+  const nav_link_4 = document.getElementById("nav_link_4").classList.add("gradient_button");
 }
 function menuAtivo5(){
-  const nav_link_5 = document.getElementById("nav_link_5").classList.add("active");
+  const nav_link_5 = document.getElementById("nav_link_5").classList.add("gradient_button");
 }
 function menuAtivo6(){
-  const nav_link_6 = document.getElementById("nav_link_6").classList.add("active");
+  const nav_link_6 = document.getElementById("nav_link_6").classList.add("gradient_button");
 }
