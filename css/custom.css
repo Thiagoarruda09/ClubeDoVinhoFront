@@ -11,15 +11,12 @@ h5{
     font-family: 'GROSTICK';
     font-size: 50px;
     color: #77060F;
+    background-color: #CCCCCC;
+    border-radius: 1000px 10px 1000px 100px;
 
 
 }
-h5:hover{
-    transform: scale(1.1);
-    transition: 1s;
-    background-color: #CCCCCC;
-
-    border-radius: 1000px 10px 1000px 100px;}
+    
 
 
 
