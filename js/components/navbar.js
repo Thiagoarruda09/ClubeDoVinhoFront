@@ -24,7 +24,7 @@ function navbar(){
           
            <a href="index.html">
                <li class="nav-item mt-2" role="presentation">
-                <button class="nav-link rounded-5 bg-danger "  data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Sair</button>
+                <button class="nav-link rounded-5 gradient "  data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Sair</button>
                          </li>
            </a>
            <a >
