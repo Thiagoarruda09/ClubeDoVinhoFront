@@ -9,6 +9,7 @@ function categorias() {
 </svg> Nova categoria</a>
     </div>
       <hr>
+      <hr style="border: 1px solid white;">
 
   <div class="container d-flex gap-2   " >
     <section id="categoria" class="card card-body  animate__animated animate__fadeInRight border border-2 border-gray col-7 ">
