@@ -133,7 +133,7 @@ function mudarTema(){
   
  
     
-  if(paginaPrincipal.style.backgroundColor === '' ){
+  if(paginaPrincipal.style.backgroundColor === '' || paginaPrincipal.style.backgroundColor === '#efefef'){
  
    body[0].style.backgroundColor = '#323539'
     paginaPrincipal.style.backgroundColor = '#323539'

@@ -52,7 +52,7 @@ a{
    color: #121212;
     background-color: #CCCCCC;
     transform: scale(1.1);
-    transition: 1s;
+    transition: 0.5s;
    
 }
 
@@ -61,8 +61,8 @@ a{
 }
 
 .gradient_button{
-    background-color: #CCCCCC;
-    color: #121212;
+    border: solid 1px #efefef;
+    color: #efefef;
 }
 .teste{
     position: relative;
