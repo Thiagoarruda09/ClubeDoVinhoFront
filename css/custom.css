@@ -3,8 +3,14 @@
     src: url(../fontes/GROSTICK.otf);
 }
 
+@font-face {
+    font-family:'poppins' ;
+    src: url(../fontes/Poppins-Light.ttf);
+}
+
 html, body {
     height: 100%;
+    font-family: 'poppins';
   
 }
 h5{
