@@ -128,16 +128,20 @@ function mudarTema(){
 
    const svg_moon = document.getElementById('svg_moon')
    const svg_sun = document.getElementById('svg_sun')
-  
+   const body = document.getElementsByTagName('body')
 
+  
+ 
     
   if(paginaPrincipal.style.backgroundColor === '' ){
  
-   
+   body[0].style.backgroundColor = '#323539'
     paginaPrincipal.style.backgroundColor = '#323539'
+
     
   }else{
-    paginaPrincipal.style.backgroundColor = ''}
+    paginaPrincipal.style.backgroundColor = ''
+    body[0].style.backgroundColor = ''}
   
     if (svg_sun.style.display === 'block' || svg_sun.style.display === '') {
       svg_sun.style.display = 'none';

@@ -68,3 +68,22 @@ a{
     position: relative;
     left: 1000px
 }
+
+.nav{
+    border: solid 1px #efefef;
+}
+
+#paginaPrincipal{
+    border: solid 1px #efefef;
+}
+
+#formulario1, #formulario2{
+    border: solid 1px #efefef;
+}
+
+.btn{
+    border: solid 1px #efefef;
+}
+
+
+
