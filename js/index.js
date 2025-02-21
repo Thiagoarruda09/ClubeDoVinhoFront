@@ -246,6 +246,17 @@ function Category() {
   });
 }
 
+
+       
+
+
+
+//        
+
+//         });
+
+
+
 // Função para exibir países na tabela
 function Paises() {
   const TABLE2 = document.getElementById("table-paises");
@@ -449,38 +460,53 @@ function Produtos() {
   });
 }
 // Função para exibir clientes na tabela 
+
+
 function Clientes() {
   const TABLE_CLIENTES = document.getElementById("table-clientes");
-  const clientes = [
-    
-    {id: 1, nome: "José", sobrenome: "Roberto", endereco: "Rua Fictícia, Nº 5", email: "joseroberto@email.com",},
-    {id: 2,nome: "Maria",sobrenome: "Fernandes",endereco: "Avenida Brasil, Nº 120",email: "mariafernandes@email.com"},
-    {id: 3,nome: "Carlos",sobrenome: "Silva",endereco: "Rua das Palmeiras, Nº 34",email: "carlossilva@email.com"},
-    {id: 4,nome: "Ana",sobrenome: "Oliveira",endereco: "Praça Central, Nº 10",email: "anaoliveira@email.com"},
-    {id: 5,nome: "Fernanda",sobrenome: "Santos",endereco: "Rua da Esperança, Nº 78",email: "fernandasantos@email.com"},
-    {id: 6,nome: "Pedro",sobrenome: "Almeida",endereco: "Travessa das Flores, Nº 22",email: "pedroalmeida@email.com"},
-    {id: 7,nome: "Lucas",sobrenome: "Mendes",endereco: "Estrada Velha, Nº 99",email: "lucasmendes@email.com"},
-    {id: 8,nome: "Juliana",sobrenome: "Pereira",endereco: "Rua do Sol, Nº 15",email: "julianapereira@email.com"},
-    {id: 9,nome: "Rafael",sobrenome: "Lima",endereco: "Alameda dos Anjos, Nº 5",email: "rafaellima@email.com"},
-    {id: 10,nome: "Camila",sobrenome: "Rodrigues",endereco: "Rua Bela Vista, Nº 50",email: "camilarodrigues@email.com"},
-  ];
-// Adiciona os clientes à tabela
-  clientes.forEach((clientes) => {
-    TABLE_CLIENTES.innerHTML += `
-        <tr>
-                <td>${clientes.id}</td>
-                <td>${clientes.nome}</td>
-                <td>${clientes.sobrenome}</td>
-                <td>${clientes.endereco}</td>
-                <td>${clientes.email}</td>
-                <td>
-                  <a href="" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-                  <a href="" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
-                </td>
-              </tr>
-        `;
-  });
+
+  let url = "https://feitoza.tec.br/api/index.php";
+
+  fetch(url) 
+    .then(res => res.json()) 
+    .then(clientes => {
+      for(let i=0; i<=clientes.length; i++){
+        TABLE_CLIENTES.innerHTML += `
+          <tr>
+            <td>${clientes[i].id}</td>
+            <td>${clientes[i].nome}</td>
+            <td>${clientes[i].email}</td>
+            <td>${clientes[i].data_cadastro}</td>
+            <td>${clientes[i].data_ultimo_pedido}</td>
+            <td>
+              <a href="#" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+            </td>
+          </tr>
+        `
+      }
+
+ 
+
+      // clientes.forEach(cliente => {
+      //   TABLE_CLIENTES.innerHTML += `
+      //     <tr>
+      //       <td>${cliente.id}</td>
+      //       <td>${cliente.nome}</td>
+      //       <td>${cliente.email}</td>
+      //       <td>${cliente.data_cadastro}</td>
+      //       <td>${cliente.data_ultimo_pedido}</td>
+      //       <td>
+      //         <a href="#" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
+      //         <a href="#" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+      //       </td>
+      //     </tr>
+      //   `;
+      // });
+    })
+  
 }
+
 // Função para exibir pedidos na tabela
 function Pedidos() {
   const TABLE_PEDIDOS = document.getElementById("table-pedidos");
