@@ -227,9 +227,11 @@ function Category() {
   // Adiciona as categorias à tabela
   
 }
+function addcategory(){
+  
+}
 
-
-       
+   
 
 
 
