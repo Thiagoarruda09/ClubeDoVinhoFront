@@ -5,7 +5,7 @@ function dashboard (){
         
         
         <!-- Conteúdo Principal -->
-        <main class="flex-grow-1 p-4 animate__animated animate__fadeInRight">
+        <main class="flex-grow-1 animate__animated animate__fadeInRight">
             <header class="d-flex justify-content-between align-items-center bg-white p-3 shadow rounded mb-4">
                 <h2 class="h5">Painel de Controle</h2>
                 <button class="btn btn-danger">Sair</button>
