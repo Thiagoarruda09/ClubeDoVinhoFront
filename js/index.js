@@ -33,6 +33,7 @@ function alterarConteudo(pagina) {
    ;
     createData();
     menuAtivo2();
+    search_category();
  
     
   }
@@ -41,7 +42,8 @@ function alterarConteudo(pagina) {
   
   }
   if (pagina === "produtos") {Produtos();
-    menuAtivo5()
+    menuAtivo5();
+    search_product();
   
   }
   if (pagina === "clientes") {Clientes();
@@ -94,6 +96,23 @@ function voltarParaCategorias(){
       categoria.classList.add('col-10');
     }, 500); // Ajuste conforme a duração da animação
   }
+}
+function search_category(){
+  document.getElementById("searchInput").addEventListener("keyup", function() {
+      let filter = this.value.toLowerCase();
+      let rows = document.querySelectorAll("#table-category tr");
+  
+      rows.forEach(row => {
+          let nome = row.cells[1]?.textContent.toLowerCase();
+          let descricao = row.cells[2]?.textContent.toLowerCase();
+  
+          if (nome.includes(filter) || descricao.includes(filter)) {
+              row.style.display = "";
+          } else {
+              row.style.display = "none";
+          }
+      });
+  });
 }
 
 
@@ -295,6 +314,25 @@ function Produtos() {
 
   // Adiciona os produtos à tabela
  
+}
+
+function search_product(){
+  document.getElementById("searchInput").addEventListener("keyup", function() {
+    let searchTerm = this.value.toLowerCase();
+    let rows = document.querySelectorAll("#table-produtos tr");
+
+    rows.forEach(row => {
+        let nome = row.children[1]?.textContent.toLowerCase() || "";
+        let descricao = row.children[3]?.textContent.toLowerCase() || "";
+
+        if (nome.includes(searchTerm) || descricao.includes(searchTerm)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+});
+
 }
 // Função para exibir clientes na tabela 
 
