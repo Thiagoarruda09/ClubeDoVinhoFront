@@ -24,7 +24,9 @@ function alterarConteudo(pagina) {
     `;
 
   // Funções específicas chamadas conforme a página
-  if (pagina === "dashboard") {menuAtivo1()
+  if (pagina === "dashboard") {
+    Dashboard();
+    menuAtivo1();
     
   }
  
@@ -58,7 +60,9 @@ function alterarConteudo(pagina) {
  
   }
 }
-
+function Dashboard() {
+  lucide.createIcons();
+}
 function addCategoria() {
   const formulario_categorias = document.getElementById('formulario_categoria');
   const categoria = document.getElementById('categoria');

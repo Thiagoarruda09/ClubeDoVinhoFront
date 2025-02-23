@@ -89,3 +89,26 @@ a{
 
 
 
+.sidebar {
+    width: 280px;
+  
+
+    color: white;
+}
+.sidebar a {
+    color: white;
+    transition: all 0.3s;
+}
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
