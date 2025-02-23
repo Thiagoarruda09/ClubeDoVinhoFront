@@ -10,13 +10,13 @@ const SVG_DELETE = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="1
 // Renderiza a página inicial
 paginaPrincipal.innerHTML = `
     ${navbar()}
-    <hr>
+ 
 `;
 
 function alterarConteudo(pagina) {
   paginaPrincipal.innerHTML = `
         ${navbar()}
-        <hr>
+       
         ${window[pagina]()}
     `;
 
@@ -246,9 +246,7 @@ function Category() {
   // Adiciona as categorias à tabela
   
 }
-function addcategory(){
-  
-}
+
 
    
 

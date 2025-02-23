@@ -16,8 +16,8 @@ function produtos() {
           </div>
         </div>
       </div>
-    <div class="d-flex justify-content-between">
-    <div class="mb-3 d-flex bg-dark p-1 gap-1 rounded shadow border border-light animate__animated animate__fadeInLeft" >
+    <div class="d-flex justify-content-between flex-row-reverse">
+    <div class="mb-3 mt-2 mr-2 d-flex bg-dark p-1 gap-1 rounded shadow border border-light animate__animated animate__fadeInRight flex-row-reverse" >
     <button class="btn gradient text-light" style="border: none;">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -26,15 +26,12 @@ function produtos() {
     <input type="text" keyup="search_product()" id="searchInput" class="form-control " placeholder="Pesquisar produto...">
      </div>
     
-             <a class="btn btn-dark col-2 offset-5" onclick="alterarConteudo('cadastrarProduto')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-</svg> Novo produto</a>
+
 
 
     </div>
    
-    <hr>
+
     <section class="card card-body animate__animated animate__fadeInRight  bg-white border border-2 border-gray">
      <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
   <table id="tabela6" class="table table-light table-striped shadow table-hover">
@@ -68,7 +65,10 @@ function produtos() {
   </table>
 </div>
 
-
+             <a class="btn btn-dark col-2 offset-5 mt-3" onclick="alterarConteudo('cadastrarProduto')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+</svg> Novo produto</a>
       
     </section>
   `;
