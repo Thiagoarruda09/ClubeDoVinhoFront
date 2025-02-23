@@ -17,7 +17,14 @@ function produtos() {
         </div>
       </div>
     <div class="d-flex justify-content-between">
-    <div class="mb-3"><input type="text" keyup="search_product()" id="searchInput" class="form-control mb-3" placeholder="Pesquisar produto..."> </div>
+    <div class="mb-3 d-flex bg-dark p-1 gap-1 rounded shadow border border-light">
+    <button class="btn btn-dark">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+    </button>
+</svg>
+    <input type="text" keyup="search_product()" id="searchInput" class="form-control " placeholder="Pesquisar produto...">
+     </div>
     
              <a class="btn btn-dark col-2 offset-5" onclick="alterarConteudo('cadastrarProduto')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
   <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
