@@ -16,7 +16,12 @@ function produtos() {
           </div>
         </div>
       </div>
-    <div class="d-flex justify-content-between flex-row-reverse">
+
+   
+
+    <section class="card card-body animate__animated animate__fadeInRight  bg-white border border-2 border-gray">
+     <div style="max-height: 500px; overflow-y: auto; overflow-x: auto;">
+         <div class="d-flex justify-content-between flex-row-reverse">
     <div class="mb-3 mt-2 mr-2 d-flex bg-dark p-1 gap-1 rounded shadow border border-light animate__animated animate__fadeInRight flex-row-reverse" >
     <button class="btn gradient text-light" style="border: none;">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -30,10 +35,6 @@ function produtos() {
 
 
     </div>
-   
-
-    <section class="card card-body animate__animated animate__fadeInRight  bg-white border border-2 border-gray">
-     <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
   <table id="tabela6" class="table table-light table-striped shadow table-hover">
     <thead class="table-dark">
       <tr>

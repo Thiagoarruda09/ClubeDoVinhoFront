@@ -1,10 +1,10 @@
 function cadastrarProduto() {
     return `
-        <div class="">
+        <div >
          
              
   
-          <section id="formulario2" class="card card-body col-10 offset-1 bg-dark text-white animate__animated animate__fadeInLeft">
+          <section id="formulario2" class="card card-body col-12 bg-dark text-white animate__animated animate__fadeInLeft">
                 <div id="erro_product_name" style="display: none;" class="alert alert-danger ">
           O nome do produto precisa ser preenchido
         </div>

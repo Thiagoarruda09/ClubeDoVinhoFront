@@ -1,8 +1,8 @@
 function clientes(){
   return ` 
       <hr>
-  <section class="card card-body animate__animated animate__fadeInRight bg-white border border-2 border-gray col-10 offset-1">
-    <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
+  <section class="card card-body animate__animated animate__fadeInRight bg-white border border-2 border-gray col-10">
+    <div style="max-height: 500px; overflow-y: auto; overflow-x: auto;">
       <table id="tabela2" class="table table-light table-striped shadow table-hover ">
         <thead class="table-dark">
           <tr>

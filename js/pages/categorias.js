@@ -1,7 +1,13 @@
 function categorias() {
   return `
   
-     <div class="d-flex flex-row-reverse">
+
+   
+
+
+  <div class="container d-flex gap-2   " >
+    <section id="categoria" class="card card-body  animate__animated animate__fadeInRight border border-2 border-gray col-7 ">
+         <div class="d-flex flex-row-reverse">
      <div class="mb-3  d-flex flex-row-reverse bg-dark mt-2 p-1 gap-1 rounded shadow border border-light animate__animated animate__fadeInRight mr-4">
      <button class="  btn gradient text-light" style="border: none;">
        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -13,12 +19,7 @@ function categorias() {
     
 
     </div>
-   
-
-
-  <div class="container d-flex gap-2   " >
-    <section id="categoria" class="card card-body  animate__animated animate__fadeInRight border border-2 border-gray col-7 ">
-      <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
+      <div style="max-height: 500px; overflow-y: auto; overflow-x: auto;">
         <table id="tabela1" class="table table-light table-striped shadow table-hover ">
           <thead class="table-dark">
             <tr>
@@ -39,10 +40,12 @@ function categorias() {
           </tbody>
         </table>
       </div>
-            <a onclick="addCategoria()" class="btn btn-dark col-2 offset-5 mt-4 " "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-</svg> Nova categoria</a>
+            <div>
+              <a onclick="addCategoria()" class="btn btn-dark btn-sm offset-5  mt-4 " "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+              </svg> Nova categoria</a>
+            </div>
     </section>
     
     
