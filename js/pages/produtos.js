@@ -17,8 +17,8 @@ function produtos() {
         </div>
       </div>
     <div class="d-flex justify-content-between">
-    <div class="mb-3 d-flex bg-dark p-1 gap-1 rounded shadow border border-light">
-    <button class="btn btn-dark">
+    <div class="mb-3 d-flex bg-dark p-1 gap-1 rounded shadow border border-light animate__animated animate__fadeInLeft" >
+    <button class="btn gradient text-light" style="border: none;">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
     </button>
@@ -37,7 +37,7 @@ function produtos() {
     <hr>
     <section class="card card-body animate__animated animate__fadeInRight  bg-white border border-2 border-gray">
      <div style="max-height: 400px; overflow-y: auto; overflow-x: auto;">
-  <table id="tabela6" class="table table-dark table-striped shadow table-hover">
+  <table id="tabela6" class="table table-light table-striped shadow table-hover">
     <thead class="table-dark">
       <tr>
         <th>#ID</th>

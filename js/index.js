@@ -234,8 +234,8 @@ function Category() {
                     <td>${categoria.nome}</td>
                     <td>${categoria.descricao}</td>
                     <td>
-                        <a href="#" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-                        <a href="#" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                        <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                 </tr>
             `;
@@ -269,8 +269,8 @@ function Paises() {
                       <td>${pais.id}</td>
                       <td><img src="${pais.bandeira}" alt="" width="30px"> ${pais.nome}</td>
                       <td>
-                        <a href="" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-                        <a href="" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+                        <a href="" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                        <a href="" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                       </td>
                     </tr>
           `;
@@ -304,8 +304,8 @@ function Produtos() {
                     <td>${produtos.valor}</td>
                     <td>${produtos.estoque}</td>
                     <td>
-                      <a href="" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-                      <a href="" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+                      <a href="" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                      <a href="" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                   </tr>
             `;
@@ -354,8 +354,8 @@ function Clientes() {
             <td>${clientes[i].data_de_cadastro}</td>
             <td>${clientes[i].data_ultimo_pedido}</td>
             <td>
-              <a href="#" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-              <a href="#" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+              <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+              <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
             </td>
           </tr>
         `
@@ -397,8 +397,8 @@ function Pedidos() {
                     <td>${pedidos.num_pedido}</td>
                     <td>${pedidos.pedido}</td>
                     <td>
-                      <a href="" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-                      <a href="" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
+                      <a href="" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                      <a href="" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                   </tr>
             `;
