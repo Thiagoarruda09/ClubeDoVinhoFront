@@ -39,6 +39,8 @@ function alterarConteudo(pagina) {
     createData();
     menuAtivo2();
     search_category();
+   
+
  
     
   }
@@ -64,6 +66,7 @@ function Dashboard() {
   lucide.createIcons();
 }
 function addCategoria() {
+
   const formulario_categorias = document.getElementById('formulario_categoria');
   const categoria = document.getElementById('categoria');
 
@@ -253,9 +256,93 @@ function Category() {
   // Adiciona as categorias à tabela
   
 }
+function enviarCategory() {
+  event.preventDefault()
+  let input_nome = document.getElementById('nome');
 
+  let input_descricao = document.getElementById('descricao')
+
+  let erro_nome = document.getElementById('erro_nome')
+
+  let erro_descricao = document.getElementById('erro_descricao')
+
+  let table_category = document.getElementById('table-category')
+
+  let id = table_category.rows.length
 
    
+     
+    
+     
+  
+    
+  
+  
+ 
+
+
+
+
+
+  let nomeValido = input_nome.value.trim() !== "";
+  let descricaoValida = input_descricao.value.trim() !== "";
+
+  // Validação do nome
+  if (!nomeValido) {
+      input_nome.classList.remove("is-valid");
+      input_nome.classList.add("is-invalid");
+      erro_nome.classList.remove("d-none");
+  } else {
+      input_nome.classList.remove("is-invalid");
+      input_nome.classList.add("is-valid");
+      erro_nome.classList.add("d-none");
+  }
+
+  // Validação da descrição
+  if (!descricaoValida) {
+      input_descricao.classList.remove("is-valid");
+      input_descricao.classList.add("is-invalid");
+      erro_descricao.classList.remove("d-none");
+  } else {
+      input_descricao.classList.remove("is-invalid");
+      input_descricao.classList.add("is-valid");
+      erro_descricao.classList.add("d-none");
+  }
+
+  // Só adiciona à tabela se ambos os campos forem válidos
+  if (nomeValido && descricaoValida) {
+      let id = table_category.rows.length + 1; // Incrementa baseado na tabela
+
+      table_category.innerHTML += `
+          <tr>
+              <td>${id}</td>
+              <td>${input_nome.value.trim()}</td>
+              <td>${input_descricao.value.trim()}</td>
+              <td>
+                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                        <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                    </td>
+          </tr>
+      `;
+
+      // Limpa os campos após adicionar com sucesso
+      input_nome.value = "";
+      input_descricao.value = "";
+ 
+  }
+}
+
+     
+ 
+
+
+  
+
+
+
+
+
+
 
 
 

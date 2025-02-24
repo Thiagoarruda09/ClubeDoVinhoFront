@@ -1,42 +1,7 @@
 // Função para enviar category
-function enviarCategory() {
 
-    event.preventDefault()
+     
 
-    let input_nome = document.getElementById('nome');
-
-    let input_descricao = document.getElementById('descricao')
-
-    let erro_nome = document.getElementById('erro_nome')
-
-    let erro_descricao = document.getElementById('erro_descricao')
-
-
-
-    if (input_nome.value == '') {
-        input_nome.classList.remove('is-valid')
-        input_nome.classList.add('is-invalid')
-        erro_nome.classList.remove('d-none')
-    } else {
-        input_nome.classList.remove('is-invalid');
-        input_nome.classList.add('is-valid')
-        erro_nome.classList.add('d-none')
-
-    }
-
-
-    if (input_descricao.value == '') {
-        input_descricao.classList.remove('is-valid')
-        input_descricao.classList.add('is-invalid')
-       erro_descricao.classList.remove('d-none')
-    } else {
-        input_descricao.classList.remove('is-invalid')
-        input_descricao.classList.add('is-valid')
-        erro_descricao.classList.add('d-none')
-    }
-
-
-}
 
 // Função para enviar produto
 function enviarProduct(){
