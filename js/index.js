@@ -308,31 +308,86 @@ function enviarCategory() {
       input_descricao.classList.add("is-valid");
       erro_descricao.classList.add("d-none");
   }
-
-  // Só adiciona à tabela se ambos os campos forem válidos
   if (nomeValido && descricaoValida) {
-      let id = table_category.rows.length + 1; // Incrementa baseado na tabela
-
-      table_category.innerHTML += `
-          <tr>
-              <td>${id}</td>
-              <td>${input_nome.value.trim()}</td>
-              <td>${input_descricao.value.trim()}</td>
-              <td>
-                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                        <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
-                    </td>
-          </tr>
-      `;
-
-      // Limpa os campos após adicionar com sucesso
-      input_nome.value = "";
-      input_descricao.value = "";
- 
+    let id = table_category.rows.length + 1; // Incrementa baseado na tabela
+  
+    table_category.innerHTML += `
+        <tr>
+            <td>${id}</td>
+            <td>${input_nome.value.trim()}</td>
+            <td>${input_descricao.value.trim()}</td>
+            <td>
+                      <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                      <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                  </td>
+        </tr>
+    `;
+  
+    // Limpa os campos após adicionar com sucesso
+    input_nome.value = "";
+    input_descricao.value = "";
+  
   }
+//   document.getElementById('formCategoria').addEventListener('submit', async function (event) {
+//     event.preventDefault(); // Evita que a página recarregue
+
+//     let input_nome = document.getElementById('nome');
+//     let input_descricao = document.getElementById('descricao');
+//     let table_category = document.getElementById('table-category');
+//     let mensagem = document.getElementById('mensagem');
+
+//     // Criando objeto com os dados do formulário
+//     let novaCategoria = {
+//         nome: input_nome.value.trim(),
+//         descricao: input_descricao.value.trim()
+//     };
+
+//     try {
+//         // Enviando os dados para o JSON Server
+//         let response = await fetch("http://localhost:3000/categorias", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(novaCategoria)
+//         });
+
+//         if (!response.ok) {
+//             throw new Error("Erro ao cadastrar a categoria");
+//         }
+
+//         let categoriaAdicionada = await response.json();
+
+//         // Adicionando a nova categoria na tabela
+//         table_category.innerHTML += `
+//             <tr>
+//                 <td>${categoriaAdicionada.id}</td>
+//                 <td>${categoriaAdicionada.nome}</td>
+//                 <td>${categoriaAdicionada.descricao}</td>
+//                 <td>
+//                     <a href="#" class="btn btn-warning btn-sm">✏️ Editar</a>
+//                     <a href="#" class="btn btn-danger btn-sm">🗑️ Excluir</a>
+//                 </td>
+//             </tr>
+//         `;
+
+//         // Exibindo mensagem de sucesso
+//         mensagem.innerText = "Categoria adicionada com sucesso!";
+//         mensagem.style.color = "green";
+
+//         // Limpando os campos
+//         input_nome.value = "";
+//         input_descricao.value = "";
+//     } catch (error) {
+//         console.error("Erro:", error);
+//         mensagem.innerText = "Erro ao cadastrar categoria!";
+//         mensagem.style.color = "red";
+//     }
+// });
+
 }
 
-     
+
  
 
 
