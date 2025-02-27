@@ -259,149 +259,61 @@ function Category() {
 function enviarCategory() {
   event.preventDefault()
   let input_nome = document.getElementById('nome');
+    let input_descricao = document.getElementById('descricao');
+    let erro_nome = document.getElementById('erro_nome');
+    let erro_descricao = document.getElementById('erro_descricao');
+    let table_category = document.getElementById('table-category');
 
-  let input_descricao = document.getElementById('descricao')
+    // Remove espaços em branco extras dos valores
+    let nomeValido = input_nome.value.trim() !== "";
+    let descricaoValida = input_descricao.value.trim() !== "";
 
-  let erro_nome = document.getElementById('erro_nome')
+    // Validação do nome
+    if (!nomeValido) {
+        input_nome.classList.remove("is-valid");
+        input_nome.classList.add("is-invalid");
+        erro_nome.classList.remove("d-none");
+    } else {
+        input_nome.classList.remove("is-invalid");
+        input_nome.classList.add("is-valid");
+        erro_nome.classList.add("d-none");
+    }
 
-  let erro_descricao = document.getElementById('erro_descricao')
+    // Validação da descrição
+    if (!descricaoValida) {
+        input_descricao.classList.remove("is-valid");
+        input_descricao.classList.add("is-invalid");
+        erro_descricao.classList.remove("d-none");
+    } else {
+        input_descricao.classList.remove("is-invalid");
+        input_descricao.classList.add("is-valid");
+        erro_descricao.classList.add("d-none");
+    }
 
-  let table_category = document.getElementById('table-category')
+    // Só adiciona à tabela se ambos os campos forem válidos
+    if (nomeValido && descricaoValida) {
+        let id = table_category.rows.length + 1; // Incrementa baseado na tabela
 
-  let id = table_category.rows.length
+        table_category.innerHTML += `
+            <tr>
+                <td>${id}</td>
+                <td>${input_nome.value.trim()}</td>
+                <td>${input_descricao.value.trim()}</td>
+                <td>
+                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                        <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                    </td>
+            </tr>
+        `;
 
-   
-     
-    
-     
+        // Limpa os campos após adicionar com sucesso
+        input_nome.value = "";
+        input_descricao.value = "";
+
+    }
+
+}  
   
-    
-  
-  
- 
-
-
-
-
-
-  let nomeValido = input_nome.value.trim() !== "";
-  let descricaoValida = input_descricao.value.trim() !== "";
-
-  // Validação do nome
-  if (!nomeValido) {
-      input_nome.classList.remove("is-valid");
-      input_nome.classList.add("is-invalid");
-      erro_nome.classList.remove("d-none");
-  } else {
-      input_nome.classList.remove("is-invalid");
-      input_nome.classList.add("is-valid");
-      erro_nome.classList.add("d-none");
-  }
-
-  // Validação da descrição
-  if (!descricaoValida) {
-      input_descricao.classList.remove("is-valid");
-      input_descricao.classList.add("is-invalid");
-      erro_descricao.classList.remove("d-none");
-  } else {
-      input_descricao.classList.remove("is-invalid");
-      input_descricao.classList.add("is-valid");
-      erro_descricao.classList.add("d-none");
-  }
-  if (nomeValido && descricaoValida) {
-    let id = table_category.rows.length + 1; // Incrementa baseado na tabela
-  
-    table_category.innerHTML += `
-        <tr>
-            <td>${id}</td>
-            <td>${input_nome.value.trim()}</td>
-            <td>${input_descricao.value.trim()}</td>
-            <td>
-                      <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                      <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
-                  </td>
-        </tr>
-    `;
-  
-    // Limpa os campos após adicionar com sucesso
-    input_nome.value = "";
-    input_descricao.value = "";
-  
-  }
-//   document.getElementById('formCategoria').addEventListener('submit', async function (event) {
-//     event.preventDefault(); // Evita que a página recarregue
-
-//     let input_nome = document.getElementById('nome');
-//     let input_descricao = document.getElementById('descricao');
-//     let table_category = document.getElementById('table-category');
-//     let mensagem = document.getElementById('mensagem');
-
-//     // Criando objeto com os dados do formulário
-//     let novaCategoria = {
-//         nome: input_nome.value.trim(),
-//         descricao: input_descricao.value.trim()
-//     };
-
-//     try {
-//         // Enviando os dados para o JSON Server
-//         let response = await fetch("http://localhost:3000/categorias", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify(novaCategoria)
-//         });
-
-//         if (!response.ok) {
-//             throw new Error("Erro ao cadastrar a categoria");
-//         }
-
-//         let categoriaAdicionada = await response.json();
-
-//         // Adicionando a nova categoria na tabela
-//         table_category.innerHTML += `
-//             <tr>
-//                 <td>${categoriaAdicionada.id}</td>
-//                 <td>${categoriaAdicionada.nome}</td>
-//                 <td>${categoriaAdicionada.descricao}</td>
-//                 <td>
-//                     <a href="#" class="btn btn-warning btn-sm">✏️ Editar</a>
-//                     <a href="#" class="btn btn-danger btn-sm">🗑️ Excluir</a>
-//                 </td>
-//             </tr>
-//         `;
-
-//         // Exibindo mensagem de sucesso
-//         mensagem.innerText = "Categoria adicionada com sucesso!";
-//         mensagem.style.color = "green";
-
-//         // Limpando os campos
-//         input_nome.value = "";
-//         input_descricao.value = "";
-//     } catch (error) {
-//         console.error("Erro:", error);
-//         mensagem.innerText = "Erro ao cadastrar categoria!";
-//         mensagem.style.color = "red";
-//     }
-// });
-
-}
-
-
- 
-
-
-  
-
-
-
-
-
-
-
-
-
-
 
 
 // Função para exibir países na tabela

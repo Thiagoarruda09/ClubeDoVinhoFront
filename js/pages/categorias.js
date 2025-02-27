@@ -9,7 +9,7 @@ function categorias() {
     <section id="categoria" class="card card-body  animate__animated animate__fadeInRight border border-2 border-gray col-7 ">
          <div class="d-flex flex-row-reverse">
      <div class="mb-3  d-flex flex-row-reverse bg-dark mt-2 p-1 gap-1 rounded shadow border border-light animate__animated animate__fadeInRight mr-4">
-     <button class="  btn gradient text-light" style="border: none;">
+     <button class="  btn  gradient text-light" style="border: none;">
        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
        </svg>
