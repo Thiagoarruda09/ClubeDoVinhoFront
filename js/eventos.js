@@ -4,6 +4,27 @@
 
 
 // Função para enviar produto
+
+let qtdCOUNT = 0
+const COUNT = document.getElementById('contador_de_modulo')
+
+
+function MudarDeModulo (modulo){
+  if (modulo.checked ===true ){
+    qtdCOUNT++
+  }else{
+    qtdCOUNT--
+  }
+
+
+
+
+  COUNT.innerHTML = qtdCOUNT
+
+
+
+}
+
 function enviarProduct(){
 
     event.preventDefault()
