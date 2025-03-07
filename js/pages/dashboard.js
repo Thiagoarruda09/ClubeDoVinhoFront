@@ -1,7 +1,7 @@
 function dashboard (){
     return`
     
-    <section class="card card-body">
+    <section class="card card-body col-3 fs-4 animate__animated animate__fadeInRight">
         <div class="alert alert-info">
             <strong>Dica:</strong>
             Selecione apenas os modulos que você quer nesse sistema
