@@ -381,7 +381,7 @@ function Produtos() {
                     <td>${produtos.estoque}</td>
                     <td>
                       <a href="" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                      <a href="" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                      <a href="" onclick="excluirProduct(${produtos.id})" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                   </tr>
             `;
@@ -390,6 +390,15 @@ function Produtos() {
 
   // Adiciona os produtos à tabela
  
+}
+function excluirProduct(id){
+ fetch(`http://localhost:3000/produtos/%{id}`,{
+  method:"DELETE"
+ })
+ alert('produto excluido')
+ location.href="";
+
+
 }
 
 function search_product(){
