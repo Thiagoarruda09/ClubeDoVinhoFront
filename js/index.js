@@ -15,7 +15,7 @@ paginaPrincipal.innerHTML = `
 
     <hr>
     ${dashboard()}
- 
+ '
 `;
 
 function alterarConteudo(pagina) {
