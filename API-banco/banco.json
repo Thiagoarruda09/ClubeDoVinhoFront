@@ -187,36 +187,12 @@
   ],
   "produtos": [
     {
-      "id": "2",
-      "nome": "Vinho Branco Chardonnay",
-      "imagem": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRzZzxHmw7nOtF5sUqQI3XDhbtg7QBfxTjjmNGqHqOKxmJPUVabvDfKC93xKyLcTHYY7OGgmRe-QD47juRCpJSqJqfbc76Vi4f4komUadNST-yPXSdq_eMb5dvXeu9bEz_7pp4-oxEANg&usqp=CAc",
-      "descricao": "Fresco e frutado, perfeito para acompanhar frutos do mar",
-      "valor": 74.5,
-      "estoque": 20
-    },
-    {
-      "id": "7",
-      "nome": "Vinho Tinto Merlot",
-      "imagem": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSBLH3Z7lr5ru1TmN7Uu4L1KaClilOU7GBF6Np-u51ts7IvkjnflTCfgmTJKtTjjGC2lzBFjMJZAVzPf6aV_esphptp36pP-pG-uCEmLovp1cnTaWtxb8D78yPKz5fdvN-H0zhrhA&usqp=CAc",
-      "descricao": "Macio e frutado, ideal para acompanhar massas e carnes",
-      "valor": 79.99,
-      "estoque": 30
-    },
-    {
-      "id": "8",
-      "nome": "Vinho Tinto Syrah",
-      "imagem": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSgKVrlOzMwVSaI9Dqm8mbzQTUE1RH-s19NRJ5-4WlYwNDQ-D-7Dbl_NlLJ17YOfSyqgrnl_y5i-nrYY29ATZLQBAlpeb1f5nIqNJIDm86O_bepYaJHgpKgDZVsVrpzMN5N9INFoowjBA&usqp=CAc",
-      "descricao": "Intenso e apimentado, com aroma de frutas escuras",
-      "valor": 94.5,
-      "estoque": 14
-    },
-    {
-      "id": "10",
-      "nome": "Vinho Tinto Tempranillo",
-      "imagem": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRIalmyXkGPtP8GMIArOdAG9yi6SwtChLJTc8A171useg0rYG69XZ79IKTK5Jdp6ishFIDf9oK0pFryo6UwVx5WwB2UZh_5Mbc85pCSdrzZ2QVvnBtbQF5MJvqsPeAU&usqp=CAc",
-      "descricao": "Espanhol equilibrado, com notas de baunilha e frutas",
-      "valor": 89,
-      "estoque": 16
+      "id": 2,
+      "nome": "vinho teste",
+      "imagem": "https://revistaadega.uol.com.br/media/evolucao_do_vinho_tinto.jpeg",
+      "descricao": "sdsd",
+      "valor": "12",
+      "estoque": "45"
     }
   ],
   "Categorias": [

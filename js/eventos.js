@@ -57,6 +57,25 @@ if (product_stock.value == '') {
     erro_product_stock.style.display = 'none'
 }
 
+let dados = {
+ 
+    nome: document.getElementById('product_name').value,
+    imagem: document.getElementById('product_img').value,
+    descricao: document.getElementById('product_desc').value,
+    valor:document.getElementById('product_price').value,
+    estoque:document.getElementById('product_stock').value
+
+}
+fetch('http://localhost:3000/produtos', {
+    method: 'POST',
+    headers:{
+        'Content-Type':'application/json'
+    },
+    body: JSON.stringify(dados)
+});
+document.getElementById('form').reset()
+alert('Produto cadastrado com sucesso')
+ListarProdutos();
 } 
 function formatarValor(){
     const product_price = document.getElementById('product_price')

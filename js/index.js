@@ -72,7 +72,7 @@ function alterarConteudo(pagina) {
     menuAtivo4()
   
   }
-  if (pagina === "produtos") {Produtos();
+  if (pagina === "produtos") {ListarProdutos();
     menuAtivo5();
     search_product();
   
@@ -185,7 +185,7 @@ function mudarTemaDeLogin(){
 function mudarTema(event){
 if(event.checked === false){
   localStorage.setItem('darkmode', 'nao')
-  location.href = "";
+
 return
 }
 
@@ -390,12 +390,13 @@ function modalImg(nome, imagem, descricao) {
   document.getElementById("modal-product-desc").innerHTML = descricao;
 }
 // Função para renderizar os produtos na tabela
-function Produtos() {
+function ListarProdutos() {
   const TABLE_PRODUTOS = document.getElementById("table-produtos");
 
   fetch("http://localhost:3000/produtos")
     .then((res) => res.json())
     .then((produtos) => {
+      TABLE_PRODUTOS.innerHTML=''
       produtos.forEach((produtos) => {
         TABLE_PRODUTOS.innerHTML += `
             <tr>
@@ -407,7 +408,7 @@ function Produtos() {
                     <td>${produtos.estoque}</td>
                     <td>
                       <a href="" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                      <a href="" onclick="excluirProduct(${produtos.id})" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                      <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                   </tr>
             `;
@@ -421,6 +422,8 @@ function excluirProduct(id){
  fetch(`http://localhost:3000/produtos/${id}`,{
   method:"DELETE"
  })
+ alert('deletado com sucesso')
+ ListarProdutos()
 
 
 
@@ -444,6 +447,8 @@ function search_product(){
 });
 
 }
+
+
 // Função para exibir clientes na tabela 
 
 
