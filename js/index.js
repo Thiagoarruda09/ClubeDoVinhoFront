@@ -8,6 +8,27 @@ const SVG_DELETE = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="1
   <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
   <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m-.646-4.854.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 0 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 .708-.708"/>
 </svg>`;
+document.addEventListener("DOMContentLoaded", () => {
+  let qtdCOUNT = 0;
+  const COUNT = document.getElementById('contador_de_modulo');
+
+  if (!COUNT) {
+      console.error("Elemento com ID 'contador_de_modulo' não foi encontrado!");
+      return;
+  }
+
+  // Captura todos os checkboxes e adiciona o evento 'change'
+  document.querySelectorAll('.form-check-input').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+          if (this.checked) {
+              qtdCOUNT++;
+          } else {
+              qtdCOUNT--;
+          }
+          COUNT.innerHTML = qtdCOUNT;
+      });
+  });
+});
 
 // Renderiza a página inicial
 paginaPrincipal.innerHTML = `
@@ -29,7 +50,7 @@ function alterarConteudo(pagina) {
   if (pagina === "dashboard") {
     Dashboard();
     menuAtivo1()
-    MudarDeModulo();
+    ;
     
   }
  
@@ -63,6 +84,11 @@ function alterarConteudo(pagina) {
   if (pagina === "pedidos") {Pedidos();
     menuAtivo6()
  
+  }
+  if(pagina === "config"){
+    MudarDeModulo();
+    menuAtivo7();
+   
   }
 }
 function Dashboard() {
@@ -195,9 +221,9 @@ localStorage.setItem('darkmode', 'sim')
    
   
 }
-if(localStorage.getItem('darkmode')==='sim'){
-  document.getElementById('darkmode').checked = true ;
-}
+
+
+
 
 
 // Função para gerar os dados de seleção de data
@@ -392,11 +418,10 @@ function Produtos() {
  
 }
 function excluirProduct(id){
- fetch(`http://localhost:3000/produtos/%{id}`,{
+ fetch(`http://localhost:3000/produtos/${id}`,{
   method:"DELETE"
  })
- alert('produto excluido')
- location.href="";
+
 
 
 }
@@ -511,5 +536,8 @@ function menuAtivo5(){
 }
 function menuAtivo6(){
   const nav_link_6 = document.getElementById("nav_link_6").classList.add("gradient_button");
+}
+function menuAtivo7(){
+  const nav_link_7 = document.getElementById("nav_link_7").classList.add("gradient_button");
 }
 

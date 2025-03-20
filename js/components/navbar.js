@@ -21,20 +21,16 @@ function navbar(){
           <li class="nav-item mt-2" role="presentation">
             <button onClick="alterarConteudo('pedidos')"  class="nav-link rounded" id="nav_link_6" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Pedidos</button>
           </li>
+                    <li class="nav-item mt-2" role="presentation">
+            <button onClick="alterarConteudo('config')"  class="nav-link rounded" id="nav_link_7" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">configurações</button>
+          </li>
           
            <a href="index.html">
                <li class="nav-item mt-2" role="presentation">
                 <button class="nav-link rounded-5 gradient "  data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Sair</button>
                          </li>
            </a>
-           <a >
-               <li class="nav-item" role="presentation">
-                <div class="form-check form-switch">
-                <input onChange="mudarTema(this)" class="form-check-input" type="checkbox" role="switch" id="darkmode">
-                <label class="form-check-label" for="modulo_categoria">Categorias</label>
-              </div>
-                         </li>
-           </a>
+ 
            
 
       </ul>`
