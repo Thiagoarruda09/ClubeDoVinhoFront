@@ -65,6 +65,27 @@ function enviarProduct() {
   alert("Produto cadastrado com sucesso");
   ListarProdutos();
 }
+function editarProduto(id) {
+    event.preventDefault();
+
+    let dados = {
+        nome: document.getElementById("product_name").value,
+        imagem: document.getElementById("product_img").value,
+        categoria: document.getElementById("product_category").value,
+        valor: document.getElementById("product_price").value,
+        estoque: document.getElementById("product_stock").value,
+      };
+
+    fetch(`http://localhost:3000/produtos/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dados),
+    })
+  
+  }
+  
 function formatarValor() {
   const product_price = document.getElementById("product_price");
   let valor = product_price.value.replace(/\D/g, "");

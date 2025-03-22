@@ -185,29 +185,27 @@
       "pedido": "vinho"
     }
   ],
-  "produtos": [
-    {
-      "id": "4e99",
-      "nome": "teste",
-      "imagem": "",
-      "categoria": "vinhos brancos",
-      "valor": "12",
-      "estoque": "21"
-    },
-    {
-      "id": "71c5",
-      "nome": "teste",
-      "imagem": "",
-      "categoria": "vinhos rosados",
-      "valor": "12",
-      "estoque": "-1"
-    }
-  ],
+  "produtos": [],
   "Categorias": [
     {
-      "id": "157d",
+      "id": "b759",
       "nome": "teste",
-      "descricao": "outro teste"
+      "descricao": "teste\n"
+    },
+    {
+      "id": "607c",
+      "nome": "wewew",
+      "descricao": "wewew"
+    },
+    {
+      "id": "9890",
+      "nome": "categoria teste",
+      "descricao": "dssd"
+    },
+    {
+      "id": "62c4",
+      "nome": "s",
+      "descricao": "s"
     }
   ]
 }

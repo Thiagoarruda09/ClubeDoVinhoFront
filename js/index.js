@@ -30,6 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function  MudarDeModulo(){
+
+  const modulo_order = document.getElementById('modulo_pedidos');
+  const modulo_country = document.getElementById('modulo_paises');
+
+ 
+  if (modulo_order.checked){
+    document.getElementById('nav_link_6').classList.add('d-none')
+
+  }
+  if (modulo_country.checked){
+    document.getElementById('nav_link_4').classList.add('d-none')
+  }
+}
+
+
 // Renderiza a página inicial
 paginaPrincipal.innerHTML = `
     ${navbar()}
@@ -49,20 +65,18 @@ function alterarConteudo(pagina) {
   // Funções específicas chamadas conforme a página
   if (pagina === "dashboard") {
     Dashboard();
-    menuAtivo1()
-    ;
+    menuAtivo1();
+    
     
   }
  
-  if(pagina=== 'cadastrarProduto'){
-    menuAtivo5()
-    
-  }
+
   if (pagina === "categorias") {Category()
    ;
     createData();
     menuAtivo2();
     search_category();
+    
    
 
  
@@ -70,72 +84,33 @@ function alterarConteudo(pagina) {
   }
   if (pagina === "paises") {Paises();
     menuAtivo4()
+    
   
   }
   if (pagina === "produtos") {ListarProdutos();
     menuAtivo5();
     search_product();
+    
   
   }
   if (pagina === "clientes") {Clientes();
     menuAtivo3()
+    
    
   }
   if (pagina === "pedidos") {Pedidos();
     menuAtivo6()
+    
  
   }
-  if(pagina === "config"){
-    MudarDeModulo();
-    menuAtivo7();
-   
-  }
+
 }
 function Dashboard() {
   lucide.createIcons();
 }
-function addCategoria() {
 
-  const formulario_categorias = document.getElementById('formulario_categoria');
-  const categoria = document.getElementById('categoria');
 
-  if (!formulario_categorias || !categoria) {
-    console.warn("Elementos não encontrados.");
-    return;
-  }
 
-  if (formulario_categorias.style.display === 'none' || formulario_categorias.style.display === '') {
-    formulario_categorias.style.display = 'block';
-    formulario_categorias.classList.remove('animate__fadeOutRight');
-    formulario_categorias.classList.add('animate__fadeInRight');
-
-    categoria.classList.remove('col-10');
-    categoria.classList.add('col-7');
-  }
-}
-
-function voltarParaCategorias(){
-  let categoria = document.getElementById('categoria');  
-  const formulario_categorias = document.getElementById('formulario_categoria');
-
-  if (!categoria || !formulario_categorias) {
-    console.warn("Elementos não encontrados.");
-    return;
-  }
-
-  if (categoria.classList.contains('col-7')) {
-    formulario_categorias.classList.remove('animate__fadeInRight');
-    formulario_categorias.classList.add('animate__fadeOutRight')
-    ;
-
-    // Aguarda o tempo da animação antes de alterar as classes
-    setTimeout(() => {
-      formulario_categorias.style.display = "none"; // Opcional: Esconder o formulário
-      categoria.classList.remove('col-7');
-      categoria.classList.add('col-10');
-    }, 500); // Ajuste conforme a duração da animação
-  }
-}
 function search_category(){
   document.getElementById("searchInput").addEventListener("keyup", function() {
       let filter = this.value.toLowerCase();
@@ -194,34 +169,8 @@ localStorage.setItem('darkmode', 'sim')
 
   document.getElementsByTagName('head')[0].innerHTML += `<link rel="stylesheet" href="../css/darkmode.css">`
 
-  //  const svg_moon = document.getElementById('svg_moon')
-  //  const svg_sun = document.getElementById('svg_sun')
-  //  const body = document.getElementsByTagName('body')
 
-  
- 
-    
-  // if(paginaPrincipal.style.backgroundColor === '' || paginaPrincipal.style.backgroundColor === '#efefef'){
- 
-  //  body[0].style.backgroundColor = '#323539'
-  //   paginaPrincipal.style.backgroundColor = '#323539'
-
-    
-  // }else{
-  //   paginaPrincipal.style.backgroundColor = ''
-  //   body[0].style.backgroundColor = ''}
-  
-  //   if (svg_sun.style.display === 'block' || svg_sun.style.display === '') {
-  //     svg_sun.style.display = 'none';
-  //     svg_moon.style.display = 'block';
-  //   } else {
-  //     svg_sun.style.display = 'block';
-  //     svg_moon.style.display = 'none';
-  //   }
-   
-  
 }
-
 
 
 
@@ -329,6 +278,7 @@ let dados_category={
       })
       alert('Categoria cadastrada com sucesso')
       Category()
+      document.getElementById('formCategoria').reset()
     }
   
     
@@ -385,7 +335,7 @@ function ListarProdutos() {
                     <td>${produtos.valor}</td>
                     <td>${produtos.estoque}</td>
                     <td>
-                      <a href="" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                      <a href="#" onclick="ReplaceButtons()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
                       <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                   </tr>
@@ -396,6 +346,7 @@ function ListarProdutos() {
   // Adiciona os produtos à tabela
  
 }
+
 function excluirProduct(id){
  fetch(`http://localhost:3000/produtos/${id}`,{
   method:"DELETE"
@@ -438,39 +389,25 @@ function Clientes() {
   fetch(url) 
     .then(res => res.json()) 
     .then(clientes => {
-      for(let i=0; i<=clientes.length; i++){
+            clientes.forEach(cliente => {
         TABLE_CLIENTES.innerHTML += `
           <tr>
-            <td>${clientes[i].id}</td>
-            <td>${clientes[i].nome}</td>
-            <td>${clientes[i].email}</td>
-            <td>${clientes[i].data_de_cadastro}</td>
-            <td>${clientes[i].data_ultimo_pedido}</td>
+            <td>${cliente.id}</td>
+            <td>${cliente.nome}</td>
+            <td>${cliente.email}</td>
+            <td>${cliente.data_cadastro}</td>
+            <td>${cliente.data_ultimo_pedido}</td>
             <td>
-              <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-              <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+              <a href="#" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
             </td>
           </tr>
-        `
-      }
+        `;
+      });
 
  
 
-      // clientes.forEach(cliente => {
-      //   TABLE_CLIENTES.innerHTML += `
-      //     <tr>
-      //       <td>${cliente.id}</td>
-      //       <td>${cliente.nome}</td>
-      //       <td>${cliente.email}</td>
-      //       <td>${cliente.data_cadastro}</td>
-      //       <td>${cliente.data_ultimo_pedido}</td>
-      //       <td>
-      //         <a href="#" class="btn btn-outline-warning btn-sm">${SVG_EDITAR} Editar</a>
-      //         <a href="#" class="btn btn-outline-danger btn-sm">${SVG_DELETE} Excluir</a>
-      //       </td>
-      //     </tr>
-      //   `;
-      // });
+
     })
   
 }
