@@ -187,64 +187,27 @@
   ],
   "produtos": [
     {
-      "id": 2,
-      "nome": "vinho teste",
-      "imagem": "https://revistaadega.uol.com.br/media/evolucao_do_vinho_tinto.jpeg",
-      "descricao": "sdsd",
+      "id": "4e99",
+      "nome": "teste",
+      "imagem": "",
+      "categoria": "vinhos brancos",
       "valor": "12",
-      "estoque": "45"
+      "estoque": "21"
+    },
+    {
+      "id": "71c5",
+      "nome": "teste",
+      "imagem": "",
+      "categoria": "vinhos rosados",
+      "valor": "12",
+      "estoque": "-1"
     }
   ],
   "Categorias": [
     {
-      "id": "1",
-      "nome": "espumante",
-      "descricao": "desc do espumante"
-    },
-    {
-      "id": "2",
-      "nome": "branco",
-      "descricao": "vinho de uvas brancas"
-    },
-    {
-      "id": "3",
-      "nome": "verde",
-      "descricao": "vinho de uvas verdes"
-    },
-    {
-      "id": "4",
-      "nome": "tinto",
-      "descricao": "vinho de uvas tintas"
-    },
-    {
-      "id": "5",
-      "nome": "rosé",
-      "descricao": "vinho rosado"
-    },
-    {
-      "id": "6",
-      "nome": "suave",
-      "descricao": "vinho de sabor adocicado"
-    },
-    {
-      "id": "7",
-      "nome": "seco",
-      "descricao": "vinho com menos açúcar residual"
-    },
-    {
-      "id": "8",
-      "nome": "fortificado",
-      "descricao": "vinho com adição de aguardente vínica"
-    },
-    {
-      "id": "9",
-      "nome": "orgânico",
-      "descricao": "vinho produzido sem pesticidas sintéticos"
-    },
-    {
-      "id": "10",
-      "nome": "biodinâmico",
-      "descricao": "vinho feito seguindo práticas biodinâmicas"
+      "id": "157d",
+      "nome": "teste",
+      "descricao": "outro teste"
     }
   ]
 }

@@ -275,20 +275,23 @@ function addAnos() {
 }
 
 // Função para exibir categorias de produtos
+
 function Category() {
   const table = document.getElementById("table-category");
  fetch("http://localhost:3000/Categorias")
     .then((res) => res.json())
     .then((categorias) => {
+      table.innerHTML = '';
       categorias.forEach((categoria) => {
         table.innerHTML += `
                 <tr>
                     <td>${categoria.id}</td>
                     <td>${categoria.nome}</td>
                     <td>${categoria.descricao}</td>
+                  
                     <td>
                         <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                        <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                        <a onclick="excluirCategoria('${categoria.id}')" href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                 </tr>
             `;
@@ -299,63 +302,38 @@ function Category() {
   // Adiciona as categorias à tabela
   
 }
+function excluirCategoria(id){
+  fetch(`http://localhost:3000/Categorias/${id}`,{
+    method:'DELETE'
+  })
+  alert('deletado com sucesso')
+  Category()
+}
+
+
 function enviarCategory() {
+  
+let dados_category={
+
+  nome:document.getElementById('category_name').value,
+  descricao:document.getElementById('category_description').value,  
+}
   event.preventDefault()
-  let input_nome = document.getElementById('nome');
-    let input_descricao = document.getElementById('descricao');
-    let erro_nome = document.getElementById('erro_nome');
-    let erro_descricao = document.getElementById('erro_descricao');
-    let table_category = document.getElementById('table-category');
-
-    // Remove espaços em branco extras dos valores
-    let nomeValido = input_nome.value.trim() !== "";
-    let descricaoValida = input_descricao.value.trim() !== "";
-
-    // Validação do nome
-    if (!nomeValido) {
-        input_nome.classList.remove("is-valid");
-        input_nome.classList.add("is-invalid");
-        erro_nome.classList.remove("d-none");
-    } else {
-        input_nome.classList.remove("is-invalid");
-        input_nome.classList.add("is-valid");
-        erro_nome.classList.add("d-none");
+ 
+      fetch("http://localhost:3000/Categorias",{
+        method: "POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body:JSON.stringify(dados_category)
+      })
+      alert('Categoria cadastrada com sucesso')
+      Category()
     }
+  
+    
 
-    // Validação da descrição
-    if (!descricaoValida) {
-        input_descricao.classList.remove("is-valid");
-        input_descricao.classList.add("is-invalid");
-        erro_descricao.classList.remove("d-none");
-    } else {
-        input_descricao.classList.remove("is-invalid");
-        input_descricao.classList.add("is-valid");
-        erro_descricao.classList.add("d-none");
-    }
-
-    // Só adiciona à tabela se ambos os campos forem válidos
-    if (nomeValido && descricaoValida) {
-        let id = table_category.rows.length + 1; // Incrementa baseado na tabela
-
-        table_category.innerHTML += `
-            <tr>
-                <td>${id}</td>
-                <td>${input_nome.value.trim()}</td>
-                <td>${input_descricao.value.trim()}</td>
-                <td>
-                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                        <a href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
-                    </td>
-            </tr>
-        `;
-
-        // Limpa os campos após adicionar com sucesso
-        input_nome.value = "";
-        input_descricao.value = "";
-
-    }
-
-}  
+  
   
 
 
@@ -402,8 +380,8 @@ function ListarProdutos() {
             <tr>
                     <td>${produtos.id}</td>
                     <td>${produtos.nome}</td>
-                  <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.descricao}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
-                    <td style="font-size: 14px;">${produtos.descricao}</td>
+                  <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
+                    <td style="font-size: 14px;">${produtos.categoria}</td>
                     <td>${produtos.valor}</td>
                     <td>${produtos.estoque}</td>
                     <td>
