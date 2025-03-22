@@ -359,25 +359,41 @@ function excluirProduct(id){
 }
 
 function search_product(){
-  document.getElementById("searchInput").addEventListener("keyup", function() {
-    let searchTerm = this.value.toLowerCase();
-    let rows = document.querySelectorAll("#table-produtos tr");
+  const search_term =document.getElementById("searchInput").value
+  const TABLE_PRODUTOS = document.getElementById("table-produtos");
 
-    rows.forEach(row => {
-        let nome = row.children[1]?.textContent.toLowerCase() || "";
-        let descricao = row.children[3]?.textContent.toLowerCase() || "";
-
-        if (nome.includes(searchTerm) || descricao.includes(searchTerm)) {
-            row.style.display = "";
-        } else {
-            row.style.display = "none";
-        }
+  fetch(`http://localhost:3000/produtos?nome_like=${search_term}`,
+    {
+      method: "GET",}
+  )
+  .then((res) => res.json())
+  .then((produtos) => {
+    TABLE_PRODUTOS.innerHTML=''
+    produtos.forEach((produtos) => {
+      TABLE_PRODUTOS.innerHTML += `
+          <tr>
+                  <td>${produtos.id}</td>
+                  <td>${produtos.nome}</td>
+                <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
+                  <td style="font-size: 14px;">${produtos.categoria}</td>
+                  <td>${produtos.valor}</td>
+                  <td>${produtos.estoque}</td>
+                  <td>
+                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                    <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                  </td>
+                </tr>
+          `;
     });
-});
+  })
+
+  
+      
+         
+
+
 
 }
-
-
 // Função para exibir clientes na tabela 
 
 
