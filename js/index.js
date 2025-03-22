@@ -89,7 +89,7 @@ function alterarConteudo(pagina) {
   }
   if (pagina === "produtos") {ListarProdutos();
     menuAtivo5();
-    search_product();
+   
     
   
   }
@@ -329,8 +329,8 @@ function ListarProdutos() {
         TABLE_PRODUTOS.innerHTML += `
             <tr>
                     <td>${produtos.id}</td>
-                    <td>${produtos.nome}</td>
-                  <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
+                    <td>${produtos.name}</td>
+                  <td><img src="${produtos.imagem}" alt="${produtos.name}" onclick="modalImg('${produtos.name}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
                     <td style="font-size: 14px;">${produtos.categoria}</td>
                     <td>${produtos.valor}</td>
                     <td>${produtos.estoque}</td>
@@ -362,32 +362,29 @@ function search_product(){
   const search_term =document.getElementById("searchInput").value
   const TABLE_PRODUTOS = document.getElementById("table-produtos");
 
-  fetch(`http://localhost:3000/produtos?nome_like=${search_term}`,
-    {
-      method: "GET",}
-  )
-  .then((res) => res.json())
-  .then((produtos) => {
-    TABLE_PRODUTOS.innerHTML=''
-    produtos.forEach((produtos) => {
-      TABLE_PRODUTOS.innerHTML += `
-          <tr>
-                  <td>${produtos.id}</td>
-                  <td>${produtos.nome}</td>
-                <td><img src="${produtos.imagem}" alt="${produtos.nome}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
-                  <td style="font-size: 14px;">${produtos.categoria}</td>
-                  <td>${produtos.valor}</td>
-                  <td>${produtos.estoque}</td>
-                  <td>
-                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                    <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
-                  </td>
-                </tr>
-          `;
-    });
+  TABLE_PRODUTOS.innerHTML = ''
+  fetch(`http://localhost:3000/produtos?name_like=${search_term}`,{
+    method:"GET"
   })
-
-  
+    .then((res) => res.json())
+    .then((produtos) => {
+      produtos.forEach((produtos)=>{
+        TABLE_PRODUTOS.innerHTML += `
+        <tr>
+                    <td>${produtos.id}</td>
+                    <td>${produtos.name}</td>
+                  <td><img src="${produtos.imagem}" alt="${produtos.name}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
+                    <td style="font-size: 14px;">${produtos.categoria}</td>
+                    <td>${produtos.valor}</td>
+                    <td>${produtos.estoque}</td>
+                    <td>
+                      <a href="#" onclick="ReplaceButtons()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                      <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                    </td>
+                  </tr>
+        `
+      })
+    })
       
          
 
