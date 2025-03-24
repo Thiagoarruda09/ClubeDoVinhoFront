@@ -364,7 +364,7 @@ function search_product(){
 
   TABLE_PRODUTOS.innerHTML = ''
   fetch(`http://localhost:3000/produtos?name_like=${search_term}`,{
-    method:"GET"
+  
   })
     .then((res) => res.json())
     .then((produtos) => {
