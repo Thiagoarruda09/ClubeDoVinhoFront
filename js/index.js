@@ -335,7 +335,7 @@ function ListarProdutos() {
                     <td>${produtos.valor}</td>
                     <td>${produtos.estoque}</td>
                     <td>
-                      <a href="#" onclick="ReplaceButtons()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                      <a href="#"   data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample3" aria-controls="offcanvasExample3"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
                       <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
                     </td>
                   </tr>
@@ -358,37 +358,47 @@ function excluirProduct(id){
 
 }
 
-function search_product(){
-  const search_term =document.getElementById("searchInput").value
-  const TABLE_PRODUTOS = document.getElementById("table-produtos");
+function editarProduto(id) {
+    event.preventDefault();
 
-  TABLE_PRODUTOS.innerHTML = ''
-  fetch(`http://localhost:3000/produtos?name_like=${search_term}`,{
-  
-  })
-    .then((res) => res.json())
-    .then((produtos) => {
-      produtos.forEach((produtos)=>{
-        TABLE_PRODUTOS.innerHTML += `
-        <tr>
-                    <td>${produtos.id}</td>
-                    <td>${produtos.name}</td>
-                  <td><img src="${produtos.imagem}" alt="${produtos.name}" onclick="modalImg('${produtos.nome}' , '${produtos.imagem}', '${produtos.categoria}')" width="50" class="rounded" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></td>
-                    <td style="font-size: 14px;">${produtos.categoria}</td>
-                    <td>${produtos.valor}</td>
-                    <td>${produtos.estoque}</td>
-                    <td>
-                      <a href="#" onclick="ReplaceButtons()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"  class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                      <a href="#" onclick="excluirProduct('${produtos.id}')" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
-                    </td>
-                  </tr>
-        `
-      })
+    
+    
+
+    let dados = {
+        name: document.getElementById("product_name_edit").value,
+        imagem: document.getElementById("product_img_edit").value,
+        categoria: document.getElementById("product_category_edit").value,
+        valor: document.getElementById("product_price_edit").value,
+        estoque: document.getElementById("product_stock_edit").value,
+      };
+
+    fetch(`http://localhost:3000/produtos/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dados),
     })
-      
-         
+    console.log("ID do produto:", id); 
+  
+  }
 
+function search_product(){
+  document.getElementById("searchInput").addEventListener("keyup", function() {
+    let searchTerm = this.value.toLowerCase();
+    let rows = document.querySelectorAll("#table-produtos tr");
 
+    rows.forEach(row => {
+        let nome = row.children[1]?.textContent.toLowerCase() || "";
+        let descricao = row.children[3]?.textContent.toLowerCase() || "";
+
+        if (nome.includes(searchTerm) || descricao.includes(searchTerm)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+});
 
 }
 // Função para exibir clientes na tabela 

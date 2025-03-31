@@ -203,34 +203,19 @@
       "estoque": "2"
     },
     {
-      "id": "8a3d",
-      "name": "teste",
-      "imagem": "",
+      "id": "1199",
+      "name": "sonico",
+      "imagem": "https://cdn.segaamerica.com/img/fearless/about/shadow-about.png",
       "categoria": "vinhos brancos",
-      "valor": "1234",
-      "estoque": ""
+      "valor": "12",
+      "estoque": "1"
     }
   ],
   "Categorias": [
     {
-      "id": "b759",
-      "nome": "teste",
-      "descricao": "teste\n"
-    },
-    {
-      "id": "607c",
-      "nome": "wewew",
-      "descricao": "wewew"
-    },
-    {
-      "id": "9890",
-      "nome": "categoria teste",
-      "descricao": "dssd"
-    },
-    {
-      "id": "62c4",
-      "nome": "s",
-      "descricao": "s"
+      "id": "e51e",
+      "nome": "nova categoria",
+      "descricao": "categoria nova"
     }
   ]
 }
