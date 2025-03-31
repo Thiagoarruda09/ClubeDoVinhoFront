@@ -64,7 +64,7 @@ function alterarConteudo(pagina) {
 
   // Funções específicas chamadas conforme a página
   if (pagina === "dashboard") {
-    Dashboard();
+  
     menuAtivo1();
     
     
@@ -104,9 +104,6 @@ function alterarConteudo(pagina) {
  
   }
 
-}
-function Dashboard() {
-  lucide.createIcons();
 }
 
 
