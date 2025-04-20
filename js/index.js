@@ -52,7 +52,7 @@ paginaPrincipal.innerHTML = `
 
     <hr>
     ${dashboard()}
- '
+ 
 `;
 
 function alterarConteudo(pagina) {
@@ -106,7 +106,63 @@ function alterarConteudo(pagina) {
 
 }
 
+//crud de categorias
+function Category() {
+  const table = document.getElementById("table-category");
+ fetch("http://localhost:3000/Categorias")
+    .then((res) => res.json())
+    .then((categorias) => {
+      table.innerHTML = '';
+      categorias.forEach((categoria) => {
+        table.innerHTML += `
+                <tr>
+                    <td>${categoria.id}</td>
+                    <td>${categoria.nome}</td>
+                    <td>${categoria.descricao}</td>
+                  
+                    <td>
+                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
+                        <a onclick="excluirCategoria('${categoria.id}')" href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
+                    </td>
+                </tr>
+            `;
+      });
+      
+    })
 
+ 
+  
+}
+function excluirCategoria(id){
+  fetch(`http://localhost:3000/Categorias/${id}`,{
+    method:'DELETE'
+  })
+  alert('deletado com sucesso')
+  Category()
+}
+
+
+function enviarCategory() {
+  
+let dados_category={
+
+  nome:document.getElementById('category_name').value,
+  descricao:document.getElementById('category_description').value,  
+}
+  event.preventDefault()
+ 
+      fetch("http://localhost:3000/Categorias",{
+        method: "POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body:JSON.stringify(dados_category)
+      })
+      alert('Categoria cadastrada com sucesso')
+      Category()
+      document.getElementById('formCategoria').reset()
+    }
+  
 
 function search_category(){
   document.getElementById("searchInput").addEventListener("keyup", function() {
@@ -220,69 +276,11 @@ function addAnos() {
   }
 }
 
-// Função para exibir categorias de produtos
-
-function Category() {
-  const table = document.getElementById("table-category");
- fetch("http://localhost:3000/Categorias")
-    .then((res) => res.json())
-    .then((categorias) => {
-      table.innerHTML = '';
-      categorias.forEach((categoria) => {
-        table.innerHTML += `
-                <tr>
-                    <td>${categoria.id}</td>
-                    <td>${categoria.nome}</td>
-                    <td>${categoria.descricao}</td>
-                  
-                    <td>
-                        <a href="#" class="btn btn-warning btn-sm">${SVG_EDITAR} Editar</a>
-                        <a onclick="excluirCategoria('${categoria.id}')" href="#" class="btn gradient text-light btn-sm">${SVG_DELETE} Excluir</a>
-                    </td>
-                </tr>
-            `;
-      });
-      
-    })
-
-  // Adiciona as categorias à tabela
-  
-}
-function excluirCategoria(id){
-  fetch(`http://localhost:3000/Categorias/${id}`,{
-    method:'DELETE'
-  })
-  alert('deletado com sucesso')
-  Category()
-}
 
 
-function enviarCategory() {
-  
-let dados_category={
-
-  nome:document.getElementById('category_name').value,
-  descricao:document.getElementById('category_description').value,  
-}
-  event.preventDefault()
- 
-      fetch("http://localhost:3000/Categorias",{
-        method: "POST",
-        headers:{
-          "content-type":"application/json"
-        },
-        body:JSON.stringify(dados_category)
-      })
-      alert('Categoria cadastrada com sucesso')
-      Category()
-      document.getElementById('formCategoria').reset()
-    }
-  
     
 
   
-  
-
 
 // Função para exibir países na tabela
 function Paises() {
