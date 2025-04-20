@@ -21,6 +21,9 @@ function navbar() {
           <li class="nav-item mt-2" role="presentation">
             <button onClick="alterarConteudo('pedidos')"  class="nav-link rounded" id="nav_link_6" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Pedidos</button>
           </li>
+                  <li class="nav-item mt-2 " role="presentation">
+          <button onClick="alterarConteudo('vitrine')" class="nav-link  rounded      " id="nav_link_8" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Vitrine</button>
+        </li>
                     <li class="nav-item mt-2" role="presentation">
                   <button class="nav-link rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_start" aria-controls="offcanvas_start">
        Configurações
