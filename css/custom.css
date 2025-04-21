@@ -106,3 +106,25 @@ a{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
 }
+.bebidas_desc {
+    color: #77060f;
+  }
+ 
+
+  .filter-container {
+    margin: 0px;
+  }
+
+  .filtr-title {
+    position: absolute;
+    bottom: 20px;
+    padding: 5px;
+    background: #e3e3e3;
+  }
+  img {
+    height: 70%;
+    width: 70%;
+  }
+
+
+
