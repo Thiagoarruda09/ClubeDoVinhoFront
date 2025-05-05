@@ -171,7 +171,7 @@ function produtos() {
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-  <form onsubmit="editarProduto(${produtos.id})" action="" class="col-10 offset-1" >
+  <form onsubmit="editarProduto('${produtos.id}')" action="" class="col-10 offset-1" >
                   <div class="row">
                       <div class="col">
                           <label for="product_name"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
