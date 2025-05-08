@@ -59,6 +59,7 @@ a{
 
 .gradient{
     background-image: linear-gradient(to right, #76060F, #A50B18, #CC1935);
+    border: none;
 }
 
 .gradient_button{
@@ -85,9 +86,7 @@ a{
     border: solid 1px #efefef;
 }
 
-.btn{
-    border: solid 1px #efefef;
-}
+
 
 
 
